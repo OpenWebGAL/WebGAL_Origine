@@ -1,0 +1,46 @@
+.aside {
+  width: 20vw;
+  height: calc(100vh - 50px);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.option {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 0 5px 0;
+  margin: 5px 0 5px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.optionMarker{
+  height: 4px;
+  width: 30%;
+  background-color: #8E354A;
+  margin: 3px 35% 3px 35%;
+  border-radius: 30px;
+}
+
+.chooseBox {
+
+}
+
+.chooseItem {
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
+  margin: 5px 10px 5px 10px;
+  border: 1px solid #8E354A;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.chooseTitle{
+  font-size: large;
+  font-weight: bold;
+}
+
+.chooseDescription{
+  font-size: smaller;
+  color: rgba(0,0,0,0.8);
+}

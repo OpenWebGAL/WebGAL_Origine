@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import store from "./store/editorStore";
 import TopBar from "./components/topBar";
+import SideBar from "./components/sideBar";
+import styles from './editor.module.scss'
 
 const Editor = () => {
     const [editorStatus, setEditorStatus] = useState(true);
@@ -13,6 +15,9 @@ const Editor = () => {
     }, [])
     return <div>
         <TopBar/>
+        <main className={styles.main}>
+            <SideBar/>
+        </main>
     </div>
 }
 
