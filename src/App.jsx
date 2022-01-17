@@ -1,13 +1,14 @@
-import {useState} from 'react'
-import logo from './logo.svg'
-import './App.css'
+import {useState} from "react";
+import Management from "./components/management";
+import Editor from "./components/editor";
+import '@icon-park/react/styles/index.css';
 
 function App() {
-    const [count, setCount] = useState(0)
-
+    const [isManagement,setIsManagement] = useState(false);
     return (
         <div className="App">
-            123
+            {isManagement&&<Management/>}
+            {!isManagement&&<Editor/>}
         </div>
     )
 }
