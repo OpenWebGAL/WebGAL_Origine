@@ -7,12 +7,10 @@ import styles from './editor.module.scss'
 const Editor = () => {
     const [editorStatus, setEditorStatus] = useState(true);
     useEffect(() => {
-        store.set('updateEditor',true);
-        store.connect('updateEditor',
-            () => {
-                setEditorStatus(store.get('updateEditor'))
-            },
-            'ForceUpdate');
+        store.set('updateEditor', true);
+        store.connect('updateEditor', () => {
+            setEditorStatus(store.get('updateEditor'))
+        }, 'ForceUpdateEditor');
     }, [])
     return <div>
         <TopBar/>

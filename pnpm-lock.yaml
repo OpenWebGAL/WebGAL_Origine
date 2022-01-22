@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@icon-park/react': ^1.3.5
   '@vitejs/plugin-react': ^1.0.7
+  axios: ^0.25.0
   flyvar: ^1.0.7
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -12,6 +13,7 @@ specifiers:
 
 dependencies:
   '@icon-park/react': 1.3.5_react-dom@17.0.2+react@17.0.2
+  axios: 0.25.0
   flyvar: 1.0.7
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -342,6 +344,14 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /axios/0.25.0:
+    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==, tarball: axios/download/axios-0.25.0.tgz}
+    dependencies:
+      follow-redirects: 1.14.7
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /binary-extensions/2.2.0:
     resolution: {integrity: sha1-dfUC7q+f/eQvyYgpZFvk6na9ni0=, tarball: binary-extensions/download/binary-extensions-2.2.0.tgz}
     engines: {node: '>=8'}
@@ -609,6 +619,16 @@ packages:
 
   /flyvar/1.0.7:
     resolution: {integrity: sha512-cEk8FltHwQ62yuStAF5L2LzWTBbnQZswhK6Q5jsgowv5An6GjCUxlSmqI9ycx/hBsynpPPzx1+ul28uaDq5LKw==, tarball: flyvar/download/flyvar-1.0.7.tgz}
+    dev: false
+
+  /follow-redirects/1.14.7:
+    resolution: {integrity: sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==, tarball: follow-redirects/download/follow-redirects-1.14.7.tgz}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /fsevents/2.3.2:
