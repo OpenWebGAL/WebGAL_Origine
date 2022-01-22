@@ -1,38 +1,59 @@
 import styles from './sideBar.module.scss'
+import {useEffect, useState} from "react";
+import runtime from "../../controller/runtime";
+import store from "../../store/editorStore";
+import GameConfig from "./sideBarContent/gameConfig";
+import AssetsManagement from "./sideBarContent/assetsManagement";
+import SceneManagement from "./sideBarContent/sceneManagement";
 
 const SideBar = () => {
+    const sideBarItem = ['游戏配置', '素材管理', '场景管理'];
+    const [ref, setRef] = useState(false);
+    useEffect(() => {
+        store.set('refSideBar', true);
+        store.connect('refSideBar', () => {
+            setRef(store.get('refSideBar'))
+        }, 'refSideBarFunc')
+    }, [])
+    const showOption = [];
+    //生成选择侧边栏Tag的界面
+    for (const e of sideBarItem) {
+        let optionMarker;
+        if (e === runtime.editorTag) {
+            optionMarker = <div className={styles.optionMarker}/>;
+        } else {
+            optionMarker = <div/>;
+        }
+        const temp = <div className={styles.tagButton} onClick={() => {
+            runtime.editorTag = e;
+            store.set('refSideBar', !store.get('refSideBar'));
+        }}>
+            <div>{e}</div>
+            {optionMarker}
+        </div>
+        showOption.push(temp);
+    }
+    //生成Content界面
+    let sideBarConetnt;
+    switch (runtime.editorTag){
+        case "游戏配置":
+            sideBarConetnt = <GameConfig/>;
+            break;
+        case "素材管理":
+            sideBarConetnt = <AssetsManagement/>;
+            break;
+        case "场景管理":
+            sideBarConetnt = <SceneManagement/>;
+            break;
+    }
+
+
     return <aside className={styles.aside}>
         <div className={styles.option}>
-            <div>
-                <div>添加语句</div>
-                <div className={styles.optionMarker}/>
-            </div>
-            <div>
-                <div>素材管理</div>
-                <div/>
-            </div>
-            <div>
-                <div>场景管理</div>
-                <div/>
-            </div>
+            {showOption}
         </div>
-        <div className={styles.chooseBox}>
-            <div className={styles.chooseItem}>
-                <div className={styles.chooseTitle}>人物对话</div>
-                <div className={styles.chooseDescription}>添加一条基本的人物对话</div>
-            </div>
-        </div>
-        <div className={styles.chooseBox}>
-            <div className={styles.chooseItem}>
-                <div className={styles.chooseTitle}>人物立绘</div>
-                <div className={styles.chooseDescription}>添加或改变人物立绘的展示</div>
-            </div>
-        </div>
-        <div className={styles.chooseBox}>
-            <div className={styles.chooseItem}>
-                <div className={styles.chooseTitle}>背景音乐</div>
-                <div className={styles.chooseDescription}>控制背景音乐的播放与停止</div>
-            </div>
+        <div className={styles.sideBarContent}>
+            {sideBarConetnt}
         </div>
     </aside>
 }

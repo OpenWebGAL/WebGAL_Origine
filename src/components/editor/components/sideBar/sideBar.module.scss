@@ -12,7 +12,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.optionMarker{
+.optionMarker {
   height: 4px;
   width: 30%;
   background-color: #8E354A;
@@ -32,15 +32,24 @@
   border: 1px solid #8E354A;
   border-radius: 7px;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-.chooseTitle{
+.chooseTitle {
   font-size: large;
   font-weight: bold;
 }
 
-.chooseDescription{
+.chooseDescription {
   font-size: smaller;
-  color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.tagButton {
+  cursor: pointer;
+}
+
+.sideBarContent {
+  overflow: auto;
+  padding: 5px 10px 5px 10px;
 }

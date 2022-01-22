@@ -11,6 +11,9 @@ const Management = () => {
                 </div>
             </nav>
         </header>
+        <main className={styles.main}>
+
+        </main>
     </div>
 }
 

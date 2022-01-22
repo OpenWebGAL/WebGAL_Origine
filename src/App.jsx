@@ -4,7 +4,7 @@ import Editor from "./components/editor";
 import '@icon-park/react/styles/index.css';
 
 function App() {
-    const [isManagement,setIsManagement] = useState(false);
+    const [isManagement,setIsManagement] = useState(true);
     return (
         <div className="App">
             {isManagement&&<Management/>}
