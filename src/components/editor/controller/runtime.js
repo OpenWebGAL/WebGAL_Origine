@@ -3,6 +3,7 @@ const runtime = {
     domain:'http://localhost',
     gameList:[],
     currentEditGame:'',
+    currentGameConfig:{}
 }
 
 export default runtime;
