@@ -1,0 +1,21 @@
+.dirButton{
+  box-sizing: border-box;
+  margin: 5px 10px 5px 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+  padding: 5px 15px 5px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.dirButtonContainer{
+  display: flex;
+  flex-flow: column;
+}
+
+.icon_small{
+  padding: 0 5px 5px 0;
+  transform: translate(0,3px);
+  display: inline-block;
+  position: relative;
+}

@@ -24,7 +24,7 @@ const SideBar = () => {
         } else {
             optionMarker = <div/>;
         }
-        const temp = <div className={styles.tagButton} onClick={() => {
+        const temp = <div key={e} className={e=== runtime.editorTag?styles.tagButtonOn:styles.tagButton} onClick={() => {
             runtime.editorTag = e;
             store.set('refSideBar', !store.get('refSideBar'));
         }}>
