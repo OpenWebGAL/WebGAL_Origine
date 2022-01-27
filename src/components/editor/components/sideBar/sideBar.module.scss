@@ -1,10 +1,14 @@
 .aside {
-  width: 20vw;
+  position: relative;
+  max-width: 30vw;
   height: calc(100vh - 50px);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+  //display: flex;
+  //flex-flow: column;
 }
 
 .option {
+  position: relative;
   display: flex;
   justify-content: space-evenly;
   padding: 5px 0 5px 0;
@@ -46,10 +50,27 @@
 }
 
 .tagButton {
+  font-size: smaller;
+  font-weight: bold;
   cursor: pointer;
+  padding: 10px 10px 5px 10px;
+  margin: 5px 5px 5px 5px;
+}
+
+.tagButtonOn{
+  font-size: smaller;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 5px 15px 5px 15px;
+  margin: 5px 5px 5px 5px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07) inset;
 }
 
 .sideBarContent {
+  position: relative;
   overflow: auto;
   padding: 5px 10px 5px 10px;
+  display: flex;
 }
