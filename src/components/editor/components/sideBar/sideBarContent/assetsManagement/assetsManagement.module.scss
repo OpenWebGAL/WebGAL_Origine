@@ -19,3 +19,12 @@
   display: inline-block;
   position: relative;
 }
+
+.controlPanel{
+  display: flex;
+}
+
+.upload{
+  z-index: 3;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
