@@ -25,6 +25,21 @@
 }
 
 .upload{
-  z-index: 3;
+  background-color: white;
+  position: fixed;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px 10px 10px 10px;
+  border-radius: 7px;
+}
+
+.fileElement{
+  padding: 5px 10px 5px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  word-break: break-all;
+  max-width: 20vw;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  margin: 0 0 5px 0 ;
+  border-radius: 7px;
 }

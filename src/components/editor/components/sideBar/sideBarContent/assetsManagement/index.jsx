@@ -3,7 +3,7 @@ import store from "../../../../store/editorStore";
 import runtime from "../../../../controller/runtime";
 import styles from './assetsManagement.module.scss'
 import axios from "axios";
-import {ArrowUp, FolderClose, LeftSmall, Upload, UpSmall} from "@icon-park/react";
+import {ArrowUp, Delete, FileEditing, FolderClose, FolderPlus, LeftSmall, Upload, UpSmall} from "@icon-park/react";
 import {IconMap, dirMap} from "./DirMap";
 
 const AssetsManagement = () => {
@@ -84,7 +84,13 @@ const AssetsManagement = () => {
             if (runtime.currentDir === '')
                 pushIntoSirContent = false;//如果是根目录，那么就不显示文件
             //不是根目录，现在正常处理文件
-            temp = <div key={currentDirContentElement}>{currentDirContentElement}</div>
+            temp = <div className={styles.fileElement} key={currentDirContentElement}>
+                {currentDirContentElement}
+                <div>
+                    <FileEditing theme="outline" size="24" fill="#333"/>
+                    <Delete theme="outline" size="24" fill="#333"/>
+                </div>
+            </div>
         }
 
         // 处理元素完毕，将其加入文件资源管理器显示的内容
@@ -103,14 +109,17 @@ const AssetsManagement = () => {
                 </div>
                 <div onClick={switchUpload}>
                     <Upload theme="outline" size="30" fill="#333"/>
+                    {
+                        showUpload && <div className={styles.upload}>
+                            上传文件<br/>
+                            <input id={'uploadFile'} type={'file'}/>
+                            <div onClick={uploadFile}>上传</div>
+                        </div>
+                    }
                 </div>
-            </div>
-        }
-        {
-            showUpload && <div className={styles.upload}>
-                上传文件<br/>
-                <input id={'uploadFile'} type={'file'}/>
-                <div onClick={uploadFile}>上传</div>
+                <div>
+                    <FolderPlus theme="outline" size="30" fill="#333"/>
+                </div>
             </div>
         }
         <div>
