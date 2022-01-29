@@ -1,12 +1,4 @@
-.dirButton{
-  box-sizing: border-box;
-  margin: 5px 10px 5px 10px;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
-  padding: 5px 15px 5px 15px;
-  border-radius: 7px;
-  cursor: pointer;
-}
+
 
 .dirButtonContainer{
   display: flex;
@@ -32,14 +24,55 @@
   border-radius: 7px;
 }
 
-.fileElement{
+.dirButton{
   padding: 5px 10px 5px 10px;
   box-sizing: border-box;
-  width: 100%;
+  width: 20vw;
   word-break: break-all;
   max-width: 20vw;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   margin: 0 0 5px 0 ;
   border-radius: 7px;
+  cursor: pointer;
+}
+
+.fileElement{
+  padding: 5px 10px 5px 10px;
+  box-sizing: border-box;
+  width: 20vw;
+  word-break: break-all;
+  max-width: 20vw;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  margin: 0 0 5px 0 ;
+  border-radius: 7px;
+}
+
+.title{
+  color: #8e354a;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 10px;
+  font-size: larger;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.currentDirShow{
+  padding: 5px 0 5px 10px;
+  margin: 5px 0 5px 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  width: 20vw;
+}
+
+.panelButton{
+  padding: 2px 2px 2px 2px;
+  margin: 5px 5px 5px 0;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 7px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  cursor: pointer;
 }

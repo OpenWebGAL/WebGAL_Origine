@@ -3,12 +3,23 @@ import store from "../../../../store/editorStore";
 import runtime from "../../../../controller/runtime";
 import styles from './assetsManagement.module.scss'
 import axios from "axios";
-import {ArrowUp, Delete, FileEditing, FolderClose, FolderPlus, LeftSmall, Upload, UpSmall} from "@icon-park/react";
+import {
+    ArrowUp,
+    Delete,
+    FileEditing,
+    FolderClose,
+    FolderPlus,
+    LeftSmall,
+    Return,
+    Upload,
+    UpSmall
+} from "@icon-park/react";
 import {IconMap, dirMap} from "./DirMap";
 
 const AssetsManagement = () => {
     const [refAssetsManagement, setRefAssetsManagement] = useState(true);
     const [showUpload, setShowUpload] = useState(false);
+    const [showAddDir, setShowAddDir] = useState(false);
     useEffect(() => {
         store.set('refAssetsManagement', refAssetsManagement);
         store.connect('refAssetsManagement', () => {
@@ -56,11 +67,31 @@ const AssetsManagement = () => {
         axios.post(`${runtime.domain}/api/editGame/addAsset/`, form, {headers: {'Content-Type': 'multipart/form-data'}}).then(r => {
             setShowUpload(false);
             getCurrentDir();
+        }).catch(e => {
+            console.log(e);
+        })
+    }
+
+    const addDir = () => {
+        const gameName = runtime.currentEditGame;
+        const currentDir = runtime.currentDir;
+        const dir = `/${gameName}/game/${currentDir}`;
+        const dirName = document.getElementById('addDirInput').value;
+        const data = {current: dir, Name: dirName}
+        axios.post(`${runtime.domain}/api/editGame/mkdir/`, data).then(r => {
+            setShowAddDir(false);
+            getCurrentDir();
+        }).catch(e => {
+            console.log(e);
         })
     }
 
     const switchUpload = () => {
         setShowUpload(!showUpload);
+    }
+
+    const switchAddDir = () => {
+        setShowAddDir(!showAddDir);
     }
 
     //开始显示当前目录里的内容
@@ -72,10 +103,15 @@ const AssetsManagement = () => {
         if (!currentDirContentElement.match(/\./)) {
 
             //是目录，按照目录的方式处理
+            //判断是不是特殊目录
+            let dirName = currentDirContentElement;
+            if (runtime.currentDir === '' && dirMap.hasOwnProperty(currentDirContentElement)) {
+                dirName = dirMap[currentDirContentElement];
+            }
             temp = <div className={styles.dirButton} key={currentDirContentElement}
                         onClick={() => cd(currentDirContentElement)}>
                 <span className={styles.icon_small}><IconMap icon={currentDirContentElement}/></span>
-                {dirMap[currentDirContentElement]}
+                {dirName}
             </div>
             if (currentDirContentElement === 'scene' && runtime.currentDir === '')
                 pushIntoSirContent = false;//场景文件不算做资源，有专门的处理方案
@@ -99,16 +135,20 @@ const AssetsManagement = () => {
     }
 
     return <div>
-        <div>
+        <div className={styles.title}>
             素材管理
         </div>
+        {runtime.currentDir !== '' &&
+            <div className={styles.currentDirShow}>
+                {runtime.currentDir}
+            < /div>}
         {
             runtime.currentDir !== '' && <div className={styles.controlPanel}>
-                <div onClick={back}>
-                    <ArrowUp theme="outline" size="30" fill="#333"/>
+                <div>
+                    <Return theme="outline" size="24" fill="#333" onClick={back} className={styles.panelButton}/>
                 </div>
-                <div onClick={switchUpload}>
-                    <Upload theme="outline" size="30" fill="#333"/>
+                <div>
+                    <Upload theme="outline" size="24" fill="#333" onClick={switchUpload} className={styles.panelButton}/>
                     {
                         showUpload && <div className={styles.upload}>
                             上传文件<br/>
@@ -118,7 +158,15 @@ const AssetsManagement = () => {
                     }
                 </div>
                 <div>
-                    <FolderPlus theme="outline" size="30" fill="#333"/>
+                    <FolderPlus theme="outline" size="24" fill="#333" onClick={switchAddDir}
+                                className={styles.panelButton}/>
+                    {
+                        showAddDir && <div className={styles.upload}>
+                            新建文件夹<br/>
+                            <input id={'addDirInput'}/>
+                            <div onClick={addDir}>新建</div>
+                        </div>
+                    }
                 </div>
             </div>
         }
