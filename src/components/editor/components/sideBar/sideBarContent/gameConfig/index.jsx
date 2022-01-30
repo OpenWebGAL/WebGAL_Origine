@@ -2,20 +2,38 @@ import styles from './gameConfig.module.scss'
 import axios from "axios";
 import runtime from "../../../../controller/runtime";
 import {useEffect, useState} from "react";
+import ChooseFile from "../../../chooseFile";
 
 const GameConfig = () => {
     const [gameConfig, setGameConfig] = useState(false);
+    const [bgmName, setBgmName] = useState('');
+    const [bgName, setBgName] = useState('');
+    const [loadImgName, setLoadImgName] = useState('');
     //获取到游戏的数据
     const getGameConfig = () => {
         axios.get(`${runtime.domain}/Games/${runtime.currentEditGame}/game/gameConfig.json`).then(r => {
             let newGameConfig = r.data;
             runtime.currentGameConfig = r.data;
             document.getElementById('gameNameInput').value = newGameConfig['Game_name'];
+            setBgmName(newGameConfig['Title_bgm']);
+            setBgName(newGameConfig['Title_img']);
+            setLoadImgName(newGameConfig['Loading_img']);
         })
     }
     const setGameName = () => {
         runtime.currentGameConfig['Game_name'] = document.getElementById('gameNameInput').value;
         updateGameConfig();
+    }
+
+    const setGameConfigByProp = (prop, value) => {
+        runtime.currentGameConfig[prop] = value;
+        updateGameConfig();
+    }
+
+    const setConstructor = (propName) => {
+        return (value) => {
+            setGameConfigByProp(propName, value);
+        }
     }
 
     const updateGameConfig = () => {
@@ -33,11 +51,45 @@ const GameConfig = () => {
 
     return <div>
         <div>
+            <div>你的游戏已加载在：</div>
+            <div>
+                <a href={`${runtime.domain}/Games/${runtime.currentEditGame}`}
+                   target="_blank">{`${runtime.domain}/Games/${runtime.currentEditGame}`}</a>
+            </div>
+        </div>
+        <div>
             <div className={styles.title}>
                 游戏名称
             </div>
             <div>
                 <input onInput={setGameName} id={"gameNameInput"}/>
+            </div>
+        </div>
+        <div>
+            <div className={styles.title}>
+                标题背景音乐
+            </div>
+            <div>
+                {bgmName}
+                <ChooseFile setShow={setBgmName} id={'bgmPicker'} dir={'bgm'} set={setConstructor('Title_bgm')}/>
+            </div>
+        </div>
+        <div>
+            <div className={styles.title}>
+                标题背景
+            </div>
+            <div>
+                {bgName}
+                <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor('Title_img')}/>
+            </div>
+        </div>
+        <div>
+            <div className={styles.title}>
+                加载图
+            </div>
+            <div>
+                {loadImgName}
+                <ChooseFile setShow={setLoadImgName} id={'loadImgPicker'} dir={'background'} set={setConstructor('Loading_img')}/>
             </div>
         </div>
     </div>

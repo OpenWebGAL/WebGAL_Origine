@@ -27,9 +27,7 @@
 .dirButton{
   padding: 5px 10px 5px 10px;
   box-sizing: border-box;
-  width: 20vw;
   word-break: break-all;
-  max-width: 20vw;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   margin: 0 0 5px 0 ;
@@ -40,9 +38,7 @@
 .fileElement{
   padding: 5px 10px 5px 10px;
   box-sizing: border-box;
-  width: 20vw;
   word-break: break-all;
-  max-width: 20vw;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   margin: 0 0 5px 0 ;
@@ -56,6 +52,7 @@
   font-size: larger;
   font-weight: bold;
   border-bottom: 1px solid rgba(0,0,0,0.2);
+  width: calc(20vw - 30px);
 }
 
 .currentDirShow{
@@ -65,7 +62,6 @@
   border-radius: 7px;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
   box-sizing: border-box;
-  width: 20vw;
 }
 
 .panelButton{
