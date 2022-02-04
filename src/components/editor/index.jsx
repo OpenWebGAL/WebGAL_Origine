@@ -3,6 +3,7 @@ import store from "./store/editorStore";
 import TopBar from "./components/topBar";
 import SideBar from "./components/sideBar";
 import styles from './editor.module.scss'
+import EditorMain from "./components/editorMain";
 
 const Editor = () => {
     const [editorStatus, setEditorStatus] = useState(true);
@@ -16,6 +17,7 @@ const Editor = () => {
         <TopBar/>
         <main className={styles.main}>
             <SideBar/>
+            <EditorMain/>
         </main>
     </div>
 }

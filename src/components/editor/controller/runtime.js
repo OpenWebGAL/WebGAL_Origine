@@ -6,6 +6,8 @@ const runtime = {
     currentGameConfig: {},
     currentDir: '',
     currentDirContent: [],
+    currentEditScene: '',
+    currentOpendSceneEdit: [],
 }
 
 export default runtime;

@@ -1,0 +1,30 @@
+.main{
+  width: 80vw;
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
+}
+
+.tag{
+  padding: 5px 5px 5px 5px;
+  margin: 0 0 0 5px;
+  cursor: pointer;
+}
+.tag:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.tagOpened{
+  padding: 5px 5px 5px 5px;
+  margin: 0 0 0 5px;
+  border-bottom: 2px solid #8e354a;
+  cursor: pointer;
+}
+
+.tagList{
+  display: flex;
+}
+
+.tagIcon{
+  padding: 5px 5px 5px 5px;
+  transform: translate(0,3px);
+}
