@@ -8,6 +8,7 @@ const runtime = {
     currentDirContent: [],
     currentEditScene: '',
     currentOpendSceneEdit: [],
+    currentSceneSentenceList: []
 }
 
 export default runtime;

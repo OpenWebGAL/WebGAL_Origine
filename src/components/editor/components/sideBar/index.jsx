@@ -10,7 +10,7 @@ const SideBar = () => {
     const sideBarItem = ['游戏配置', '素材管理', '场景管理'];
     const [ref, setRef] = useState(false);
     useEffect(() => {
-        store.set('refSideBar', true);
+        store.set('refSideBar', ref);
         store.connect('refSideBar', () => {
             setRef(store.get('refSideBar'))
         }, 'refSideBarFunc')
