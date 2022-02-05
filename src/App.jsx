@@ -3,6 +3,7 @@ import Management from "./components/management";
 import Editor from "./components/editor";
 import '@icon-park/react/styles/index.css';
 import store from "./components/editor/store/editorStore";
+import './App.css'
 
 function App() {
     const [isManagement, setIsManagement] = useState(true);

@@ -84,12 +84,14 @@ const SceneEditor = (props) => {
 
 
     return <div>
-        <div onClick={() => {
-            createNewSentence('dialog')
-        }}>
-            测试：添加一个基本句
+        <div className={styles.topButtonList}>
+            <div className={styles.topButton} onClick={writeSence}>保存场景</div>
+            <div className={styles.topButton} onClick={() => {
+                createNewSentence('dialog')
+            }}>
+                添加语句
+            </div>
         </div>
-        <div onClick={writeSence}>测试：保存</div>
         <div>
             {showSentenceList}
         </div>

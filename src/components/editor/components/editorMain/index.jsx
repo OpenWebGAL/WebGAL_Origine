@@ -11,6 +11,8 @@ const EditorMain = () => {
         store.set('updateEditor', updateEditor);
         store.connect('updateEditor', () => {
             setUpdateEditor(store.get('updateEditor'));
+            //通知场景编辑器
+            store.set('refScene', !store.get('refScene'));
         }, 'updateEditorFunc');
     }, []);
 

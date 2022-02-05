@@ -3,6 +3,7 @@
   width: 20vw;
   height: calc(100vh - 50px);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: auto;
   //display: flex;
   //flex-flow: column;
 }

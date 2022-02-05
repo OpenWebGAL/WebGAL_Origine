@@ -1,3 +1,31 @@
 .title{
   font-size: large;
+  color: #8e354a;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  margin: 15px 0 10px 0;
+  padding: 5px 5px 5px 5px;
+}
+
+.previewGameButton{
+  color: white;
+  background-color: #D05A6E;
+  padding: 10px 10px 10px 10px;
+  margin: 5px 0 5px 0;
+  border: 2px solid #8e354a;
+  border-radius: 7px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  font-size: larger;
+}
+
+.gameNameInput{
+  outline-style: none ;
+  font-size: larger;
+  border: 1px solid #8e354a;
+  color: #8e354a;
+  padding: 5px 10px 5px 10px;
+  border-radius: 4px;
+}
+
+.gameNameInput:focus{
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
 }

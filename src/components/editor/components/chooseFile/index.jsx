@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import runtime from "../../controller/runtime";
 import styles from './chooseFile.module.scss';
-import {Edit} from "@icon-park/react";
+import {Edit, FolderClose, Notes} from "@icon-park/react";
 
 
 const ChooseFile = (props) => {
@@ -59,24 +59,24 @@ const ChooseFile = (props) => {
             isDir = false;
         let temp = <div>{''}</div>
         if (isDir) {
-            temp = <div key={e} onClick={() => {
+            temp = <div className={styles.singleFile} key={e} onClick={() => {
                 const dir = currentDir + '/' + e;
                 setCurrentDir(dir);
                 getFileByDir(dir);
-            }}>{e}</div>
+            }}><FolderClose theme="outline" size="18" fill="#333" className={styles.fileIcon}/>{e}</div>
         } else {
-            temp = <div key={e} onClick={() => {
+            temp = <div className={styles.singleFile} key={e} onClick={() => {
                 setChoosedFile(simpFileDir(currentDir + '/' + e));
                 setBysetFunc(e);
                 setShowChooseWindow(!showChooseWindow);
-            }}>{e}</div>;
+            }}><Notes theme="outline" size="18" fill="#333" className={styles.fileIcon}/>{e}</div>;
         }
         showFileList.push(temp);
     }
 
     return <div>
         <div className={styles.chooseBox}>
-            <div onClick={() => {
+            <div className={styles.chooseIcon} onClick={() => {
                 // 恢复初始状态
                 if (showChooseWindow === false) {
                     setCurrentDir(props.dir);
@@ -85,14 +85,14 @@ const ChooseFile = (props) => {
                 }
                 setShowChooseWindow(!showChooseWindow)
             }}>
-                <Edit theme="outline" size="24" fill="#333"/>
+                <Edit theme="outline" size="18" fill="#333"/> 选择文件
             </div>
             {/*<div className={styles.choosed}>*/}
             {/*    {choosedFile !== '' ? choosedFile : '未更改'}*/}
             {/*</div>*/}
         </div>
         <div>
-            {showChooseWindow && <div>{showFileList}</div>}
+            {showChooseWindow && <div className={styles.fileList}>{showFileList}</div>}
         </div>
     </div>
 

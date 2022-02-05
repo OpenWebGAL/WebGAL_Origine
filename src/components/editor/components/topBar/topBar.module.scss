@@ -16,4 +16,10 @@
 }
 .titleIcon{
   padding: 10px 10px 10px 10px ;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.titleIcon:hover{
+  background-color: rgba(0,0,0,0.1);
 }

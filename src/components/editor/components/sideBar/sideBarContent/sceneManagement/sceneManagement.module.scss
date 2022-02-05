@@ -1,0 +1,33 @@
+.titleText{
+  color: #8e354a;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 10px;
+  font-size: larger;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  width: calc(20vw - 35px);
+}
+
+.scene{
+  box-sizing: border-box;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 18vw;
+}
+
+.scene:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.newSceneButton{
+  width: 100px;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.sceneList{
+  margin: 5px 0 0 0;
+}

@@ -1,0 +1,14 @@
+.topButtonList{
+  display: flex;
+}
+
+.topButton{
+  padding: 5px 10px 5px 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin: 5px 5px 5px 5px;
+  border-radius: 5px;
+  background-color: #8e354a;
+  color: white;
+  cursor: pointer;
+  font-size: smaller;
+}

@@ -3,6 +3,8 @@ import axios from "axios";
 import runtime from "../../../../controller/runtime";
 import store from "../../../../store/editorStore";
 import AddScene from "./addScene";
+import styles from "./sceneManagement.module.scss";
+import {AddOne, PlayTwo} from "@icon-park/react";
 
 const SceneManagement = () => {
     const [sceneList, setSceneList] = useState([]);
@@ -51,23 +53,28 @@ const SceneManagement = () => {
         if (splitE[splitE.length - 1] === 'json') {
             showThis = true;
         }
-        const temp = <div key={e} onClick={() => openSceneEdit(e)}>{e}</div>
+        const temp = <div className={styles.scene} key={e} onClick={() => openSceneEdit(e)}>
+            <PlayTwo theme="outline" size="16" fill="#333" style={{padding:'0 5px 0 0'}}/>{e}
+        </div>
         if (showThis)
             showSceneList.push(temp);
     }
 
 
     return <div>
-        <div>场景管理</div>
-        <div onClick={() => {
+        <div className={styles.titleText}>
+            场景管理
+        </div>
+        <div className={styles.newSceneButton} onClick={() => {
             setShowAddScene(!showAddScene);
         }}>
+            <AddOne theme="outline" size="18" fill="#333" style={{padding:'0 5px 0 0'}}/>
             新建场景
         </div>
         <div>
             {showAddScene && <AddScene added={addedNewScene}/>}
         </div>
-        <div>
+        <div className={styles.sceneList}>
             {showSceneList}
         </div>
     </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import runtime from "../../../../../controller/runtime";
+import styles from './addScene.module.scss'
 
 const AddScene = (props) => {
 
@@ -12,9 +13,11 @@ const AddScene = (props) => {
         })
     }
 
-    return <div>
-        <input id={'addSceneName'}/>
-        <div onClick={add}>新建</div>
+    return <div className={styles.main}>
+        <div className={styles.title}>
+            场景名称：<input className={styles.addInput} id={'addSceneName'}/>
+        </div>
+        <div className={styles.addButton} onClick={add}>新建场景</div>
     </div>
 }
 

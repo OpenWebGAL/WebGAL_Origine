@@ -1,5 +1,22 @@
 .sentence{
-  padding: 5px 5px 5px 5px;
+  font-size: larger;
+  padding: 10px 10px 10px 10px;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+  margin: 10px 15px 10px 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
+.dialog_input{
+  font-size: larger;
+  width: 500px;
+  outline-style: none ;
+  border: 0;
+  border-bottom: 2px solid #8e354a;
+}
+
+.singleOption{
+  //padding: 5px 0 5px 0;
+  margin: 5px 0 10px 5px;
 }

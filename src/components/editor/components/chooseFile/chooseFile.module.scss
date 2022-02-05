@@ -7,3 +7,42 @@
 .chooseBox{
   display: flex;
 }
+.chooseIcon{
+  margin: 10px 0 0 0;
+  padding: 5px 10px 5px 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size:medium;
+  cursor: pointer;
+}
+
+.chooseIcon:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+.fileList{
+  width: 15vw;
+  position: absolute;
+  margin: 3px 0 10px 0;
+  padding: 5px 10px 5px 10px;
+  border-radius: 7px;
+  border: 2px solid rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background-color: white;
+}
+
+.singleFile{
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  margin: 5px 0 5px 0;
+  cursor: pointer;
+}
+
+.singleFile:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.fileIcon{
+  padding: 0 5px 0 0;
+}

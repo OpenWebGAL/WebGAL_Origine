@@ -3,6 +3,7 @@ import axios from "axios";
 import runtime from "../../../../controller/runtime";
 import {useEffect, useState} from "react";
 import ChooseFile from "../../../chooseFile";
+import {PlayOne} from "@icon-park/react";
 
 const GameConfig = () => {
     const [gameConfig, setGameConfig] = useState(false);
@@ -51,18 +52,21 @@ const GameConfig = () => {
 
     return <div>
         <div>
-            <div>你的游戏已加载在：</div>
-            <div>
-                <a href={`${runtime.domain}/Games/${runtime.currentEditGame}`}
-                   target="_blank">{`${runtime.domain}/Games/${runtime.currentEditGame}`}</a>
-            </div>
+            <a style={{color: 'black', textDecoration: 'none'}}
+               href={`${runtime.domain}/Games/${runtime.currentEditGame}`}
+               target="_blank">
+                <div className={styles.previewGameButton}>
+                    <PlayOne theme="outline" size="28" fill="#FFF" style={{padding: '0 5px 0 0', transform: 'translate(0,4px)'}}/>
+                    预览游戏
+                </div>
+            </a>
         </div>
         <div>
             <div className={styles.title}>
                 游戏名称
             </div>
             <div>
-                <input onInput={setGameName} id={"gameNameInput"}/>
+                <input onInput={setGameName} id={"gameNameInput"} className={styles.gameNameInput}/>
             </div>
         </div>
         <div>
@@ -89,7 +93,8 @@ const GameConfig = () => {
             </div>
             <div>
                 {loadImgName}
-                <ChooseFile setShow={setLoadImgName} id={'loadImgPicker'} dir={'background'} set={setConstructor('Loading_img')}/>
+                <ChooseFile setShow={setLoadImgName} id={'loadImgPicker'} dir={'background'}
+                            set={setConstructor('Loading_img')}/>
             </div>
         </div>
     </div>
