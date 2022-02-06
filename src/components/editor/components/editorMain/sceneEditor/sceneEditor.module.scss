@@ -12,3 +12,28 @@
   cursor: pointer;
   font-size: smaller;
 }
+
+.addSentencePanel{
+  position: absolute;
+  //padding: 10px 10px 10px 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.addSentenceButton{
+  padding: 5px 10px 5px 10px;
+  margin: 3px 5px 3px 5px;
+  cursor: pointer;
+}
+
+.addSentenceButton:hover{
+
+  background-color: rgba(0,0,0,0.15);
+}
+
+.sentenceList {
+  overflow: auto;
+  height: calc(100vh - 160px);
+}

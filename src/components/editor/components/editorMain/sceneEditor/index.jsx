@@ -4,9 +4,11 @@ import store from "../../../store/editorStore";
 import runtime from "../../../controller/runtime";
 import axios from "axios";
 import Dialog from "./sentence/dialog";
+import {Avatar, Change, Comment, FileMusic, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
 
 const SceneEditor = (props) => {
     const [updateScene, setUpdateScene] = useState(true);
+    const [showAdd, setShowAdd] = useState(false);
 
     useEffect(() => {
         //这个钩子仅用于更新场景（基础钩子）
@@ -27,53 +29,12 @@ const SceneEditor = (props) => {
         updateSceneFromFile();
     }, []);
 
-    function updateSceneFromFile() {
-        //读取Scene的数据
-        let sceneName = runtime.currentEditScene;
-        if (sceneName === '') {
-            sceneName = props.sceneName;
-        }
-        if (sceneName === '')
-            return;
-        const url = `${runtime.domain}/Games/${runtime.currentEditGame}/game/scene/${sceneName}`;
-        axios.get(url,).then(r => {
-            runtime.currentSceneSentenceList = r.data;
-            store.set('updateScene', !store.get('updateScene'));
-        }).catch(e => console.log(e))
-    }
-
-    function createNewSentence(sentenceType) {
-        let sentence;
-        switch (sentenceType) {
-            case 'dialog':
-                sentence = {
-                    type: sentenceType,
-                    speaker: '',
-                    content: ''
-                }
-        }
-        runtime.currentSceneSentenceList.push(sentence);
-        writeSence();
-    }
-
-    function writeSence() {
-        const url = `${runtime.domain}/api/editGame/editScene/`;
-        const data = {
-            gameName: runtime.currentEditGame,
-            sceneName: runtime.currentEditScene,
-            sceneData: runtime.currentSceneSentenceList
-        };
-        axios.post(url, data).then(r => {
-                updateSceneFromFile();
-            }
-        ).catch(e => console.log(e));
-    }
-
 
     //开始生成元素
     let showSentenceList = [];
-    for (let i = 0; i < runtime.currentSceneSentenceList.length; i++) {
-        const sentence = runtime.currentSceneSentenceList[i];
+    const showSentenceGenerateArray = JSON.parse(JSON.stringify(runtime.currentSceneSentenceList));
+    for (let i = 0; i < showSentenceGenerateArray.length; i++) {
+        const sentence = showSentenceGenerateArray[i];
         let temp;
         switch (sentence.type) {
             case 'dialog':
@@ -82,21 +43,101 @@ const SceneEditor = (props) => {
         showSentenceList.push(temp);
     }
 
+    const showAddSentence = <div className={styles.addSentencePanel}>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><Comment theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>添加对话
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><Avatar theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><Change theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>分支选择
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><FileMusic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>背景音乐
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('dialog')
+        }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
+        </div>
+    </div>
+
 
     return <div>
         <div className={styles.topButtonList}>
             <div className={styles.topButton} onClick={writeSence}>保存场景</div>
             <div className={styles.topButton} onClick={() => {
-                createNewSentence('dialog')
+                setShowAdd(!showAdd);
             }}>
                 添加语句
             </div>
+            <div>{showAdd && showAddSentence}</div>
         </div>
-        <div>
+        <div className={styles.sentenceList}>
             {showSentenceList}
         </div>
     </div>
 
 }
+
+
+function updateSceneFromFile() {
+    //读取Scene的数据
+    let sceneName = runtime.currentEditScene;
+    if (sceneName === '') {
+        sceneName = props.sceneName;
+    }
+    if (sceneName === '')
+        return;
+    const url = `${runtime.domain}/Games/${runtime.currentEditGame}/game/scene/${sceneName}`;
+    axios.get(url,).then(r => {
+        runtime.currentSceneSentenceList = r.data;
+        store.set('updateScene', !store.get('updateScene'));
+    }).catch(e => console.log(e))
+}
+
+function createNewSentence(sentenceType, index) {
+    let sentence;
+    switch (sentenceType) {
+        case 'dialog':
+            sentence = {
+                type: sentenceType,
+                speaker: '',
+                content: ''
+            }
+    }
+    if (index !== undefined) {
+        runtime.currentSceneSentenceList.splice(index, 0, sentence);
+    } else
+        runtime.currentSceneSentenceList.push(sentence);
+    writeSence();
+}
+
+function writeSence() {
+    const url = `${runtime.domain}/api/editGame/editScene/`;
+    const data = {
+        gameName: runtime.currentEditGame,
+        sceneName: runtime.currentEditScene,
+        sceneData: runtime.currentSceneSentenceList
+    };
+    axios.post(url, data).then(r => {
+            updateSceneFromFile();
+        }
+    ).catch(e => console.log(e));
+}
+
+export {updateSceneFromFile, createNewSentence, writeSence}
 
 export default SceneEditor;

@@ -1,7 +1,7 @@
 import styles from './management.module.scss'
 import {useEffect, useState} from "react";
 import store from "../editor/store/editorStore";
-import runtime from "../editor/controller/runtime";
+import runtime, {runtimeTemplate} from "../editor/controller/runtime";
 import axios from "axios";
 import {AddOne, GameTwo} from "@icon-park/react";
 
@@ -28,6 +28,10 @@ const Management = () => {
     let showGameList = [];
     for (const e of runtime.gameList) {
         const temp = <div className={styles.singleGameEntryButton} key={e} onClick={() => {
+            //resetRuntime
+            for (const key in runtime) {
+                runtime[key] = runtimeTemplate[key];
+            }
             runtime.currentEditGame = e;
             store.set('isManagement', false);
         }

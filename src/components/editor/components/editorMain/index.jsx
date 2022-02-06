@@ -14,6 +14,12 @@ const EditorMain = () => {
             //通知场景编辑器
             store.set('refScene', !store.get('refScene'));
         }, 'updateEditorFunc');
+        // store.set('updateEditorWithoutGet', updateEditor);
+        // store.connect('updateEditorWithoutGet', () => {
+        //     setUpdateEditor(store.get('updateEditorWithoutGet'));
+        //     //通知场景编辑器
+        //     store.set('updateScene', !store.get('refScene'));
+        // }, 'updateEditorWithoutGetFunc');
     }, []);
 
     const switchTag = (tagName) => {

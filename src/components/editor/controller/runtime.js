@@ -1,4 +1,4 @@
-const runtime = {
+const runtimeTemplate = {
     editorTag: '游戏配置',
     domain: 'http://localhost',
     gameList: [],
@@ -11,4 +11,7 @@ const runtime = {
     currentSceneSentenceList: []
 }
 
+const runtime = JSON.parse(JSON.stringify(runtimeTemplate));
+
+export {runtimeTemplate};
 export default runtime;
