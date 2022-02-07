@@ -32,9 +32,17 @@
   border-radius: 5px;
   margin: 0 5px 0 0;
   cursor: pointer;
+  position: relative;
 }
 
 .sentenceButton:hover{
   background-color: rgba(0,0,0,0.1);
 
+}
+
+.sentenceIndexShow{
+  color: #8e354a;
+  font-size: x-large;
+  font-weight: bold;
+  padding: 0 0 10px 0;
 }

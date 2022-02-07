@@ -55,6 +55,10 @@ const ChooseFile = (props) => {
     for (const e of currentDirContent) {
         //判断是不是目录，如果是，则点击目录的效果是进入二级
         let isDir = true;
+        let show = true;
+        if (e.match(/\.json/)) {
+            show = false;
+        }
         if (e.match(/\./))
             isDir = false;
         let temp = <div>{''}</div>
@@ -71,7 +75,8 @@ const ChooseFile = (props) => {
                 setShowChooseWindow(!showChooseWindow);
             }}><Notes theme="outline" size="18" fill="#333" className={styles.fileIcon}/>{e}</div>;
         }
-        showFileList.push(temp);
+        if (show)
+            showFileList.push(temp);
     }
 
     return <div>
@@ -91,7 +96,7 @@ const ChooseFile = (props) => {
             {/*    {choosedFile !== '' ? choosedFile : '未更改'}*/}
             {/*</div>*/}
         </div>
-        <div>
+        <div style={{position: 'relative'}}>
             {showChooseWindow && <div className={styles.fileList}>{showFileList}</div>}
         </div>
     </div>

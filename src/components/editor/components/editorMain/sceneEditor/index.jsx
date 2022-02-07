@@ -24,7 +24,8 @@ const SceneEditor = (props) => {
             updateSceneFromFile();
         }, 'refSceneFunc');
         //这个钩子用来写入并更新场景
-        store.set('writeScene', true);
+        if (store.get('writeScene') === undefined)
+            store.set('writeScene', true);
         store.connect('writeScene', () => {
             writeSence();
         }, 'writeSceneFunc');
@@ -37,7 +38,7 @@ const SceneEditor = (props) => {
     const showSentenceGenerateArray = JSON.parse(JSON.stringify(runtime.currentSceneSentenceList));
     for (let i = 0; i < showSentenceGenerateArray.length; i++) {
         const sentence = showSentenceGenerateArray[i];
-        const temp = sentenceMap(sentence,i);
+        const temp = sentenceMap(sentence, i);
         showSentenceList.push(temp);
     }
 
@@ -94,9 +95,9 @@ const SceneEditor = (props) => {
 function updateSceneFromFile() {
     //读取Scene的数据
     let sceneName = runtime.currentEditScene;
-    if (sceneName === '') {
-        sceneName = props.sceneName;
-    }
+    // if (sceneName === '') {
+    //     sceneName = props.sceneName;
+    // }
     if (sceneName === '')
         return;
     const url = `${runtime.domain}/Games/${runtime.currentEditGame}/game/scene/${sceneName}`;

@@ -41,7 +41,6 @@ const SceneManagement = () => {
         //改变当前编辑的Scene
         runtime.currentEditScene = sceneName;
         store.set('updateEditor', !store.get('updateEditor'));//通知编辑器更新到最新的环境;
-        // console.log(runtime);
     }
 
     //用获得的sceneList生成场景列表

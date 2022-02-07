@@ -20,6 +20,7 @@ const Dialog = (props) => {
     useEffect(() => {
         document.getElementById('speakerInput' + props.index).value = props.data.speaker;
         document.getElementById('contentInput' + props.index).value = props.data.content;
+        // document.getElementById('dialog_pbms' + props.index).checked = props.data.ignoreSpeaker;
     })
 
     //传递变化的结果
@@ -34,7 +35,7 @@ const Dialog = (props) => {
         store.set('writeScene', !store.get('writeScene'));
     }
 
-    const [vocalName,setVocalName]= useState('');
+    const [vocalName,setVocalName]= useState(props.data.vocal);
 
     const setConstructor = () => {
         return (value) => {
@@ -45,11 +46,12 @@ const Dialog = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'dialog'} className={styles.sentence}>
+        <div className={styles.sentenceIndexShow}>语句{props.index+1}:基本对话</div>
         <ControlPanel data={propsToPanel}/>
         <main>
             <div className={styles.singleOption}>
                 旁白模式<span style={{padding:'0 5px 0 0'}}> </span>
-                <Switch onChange={dialogCheckBoxUpdate} />
+                <Switch id={'dialog_pbms'} checked={props.data.ignoreSpeaker} onChange={dialogCheckBoxUpdate} />
                 <span style={{padding:'0 0 0 5px'}}>（将不会显示角色名）</span>
             </div>
             <div className={styles.singleOption}>
