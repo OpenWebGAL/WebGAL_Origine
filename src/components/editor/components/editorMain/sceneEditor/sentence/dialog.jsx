@@ -2,7 +2,7 @@ import runtime from "../../../../controller/runtime";
 import store from "../../../../store/editorStore";
 import {useEffect, useState} from "react";
 import styles from './sentence.module.scss'
-import {deleteThis} from "./util";
+import {changePos, deleteThis} from "./util";
 import {Add, Delete, DownSquare, UpSquare} from "@icon-park/react";
 import AddSentenceByIndex from "../addSentenceByIndex";
 
@@ -33,11 +33,15 @@ const Dialog = (props) => {
                 <Delete theme="outline" size="16" fill="#333" style={{padding: '0 5px 0 0'}}/>
                 删除本句
             </div>
-            <div className={styles.sentenceButton}>
+            <div onClick={() => {
+                changePos(props.index, -1)
+            }} className={styles.sentenceButton}>
                 <UpSquare theme="outline" size="16" fill="#333" style={{padding: '0 5px 0 0'}}/>
                 上移本句
             </div>
-            <div className={styles.sentenceButton}>
+            <div onClick={() => {
+                changePos(props.index, 1)
+            }} className={styles.sentenceButton}>
                 <DownSquare theme="outline" size="16" fill="#333" style={{padding: '0 5px 0 0'}}/>
                 下移本句
             </div>
