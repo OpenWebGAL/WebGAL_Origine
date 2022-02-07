@@ -3,8 +3,10 @@ import {useEffect, useState} from "react";
 import store from "../../../store/editorStore";
 import runtime from "../../../controller/runtime";
 import axios from "axios";
-import Dialog from "./sentence/dialog";
 import {Avatar, Change, Comment, FileMusic, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
+import createSentence from "./createSentence";
+import sentenceMap from "./sentenceMap";
+import 'antd/dist/antd.css';
 
 const SceneEditor = (props) => {
     const [updateScene, setUpdateScene] = useState(true);
@@ -35,11 +37,7 @@ const SceneEditor = (props) => {
     const showSentenceGenerateArray = JSON.parse(JSON.stringify(runtime.currentSceneSentenceList));
     for (let i = 0; i < showSentenceGenerateArray.length; i++) {
         const sentence = showSentenceGenerateArray[i];
-        let temp;
-        switch (sentence.type) {
-            case 'dialog':
-                temp = <Dialog data={sentence} index={i} key={i}/>;
-        }
+        const temp = sentenceMap(sentence,i);
         showSentenceList.push(temp);
     }
 
@@ -109,15 +107,7 @@ function updateSceneFromFile() {
 }
 
 function createNewSentence(sentenceType, index) {
-    let sentence;
-    switch (sentenceType) {
-        case 'dialog':
-            sentence = {
-                type: sentenceType,
-                speaker: '',
-                content: ''
-            }
-    }
+    const sentence = createSentence(sentenceType);
     if (index !== undefined) {
         runtime.currentSceneSentenceList.splice(index, 0, sentence);
     } else

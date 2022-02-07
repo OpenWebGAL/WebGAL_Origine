@@ -1,58 +1,96 @@
-.nav{
+.nav {
   position: fixed;
   width: 100vw;
   display: flex;
   height: 50px;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   line-height: 50px;
 }
-.title{
+
+.title {
   color: #8E354A;
   font-size: x-large;
-  font-family: Georgia ,serif;
+  font-family: Georgia, serif;
   padding: 0 10px 0 20px;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.subTitle{
+.subTitle {
   color: #8E354A;
   font-size: x-large;
-  font-family: 思源宋体,serif;
+  font-family: 思源宋体, serif;
   padding: 5px 10px 10px 20px;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.main{
+.main {
   padding: 60px 10px 10px 10px;
 }
 
-.gameList{
+.gameList {
   padding: 10px 10px 10px 10px;
   display: flex;
 }
 
-.singleGameEntryButton{
+.singleGameEntryButton {
   padding: 15px 35px 15px 15px;
+  margin: 5px 5px 5px 5px;
   box-sizing: border-box;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   font-size: x-large;
   cursor: pointer;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-}
-.singleGameEntryButton:hover{
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.buttonIcon{
+.singleGameEntryButton:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttonIcon {
   padding: 0 10px 0 0;
 }
 
-.addIcon{
+.addIcon {
   padding: 10px 15px 10px 15px;
   font-size: large;
   line-height: 24px;
   cursor: pointer;
+}
+
+.createPanel {
+  font-size: 18px;
+  position: absolute;
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.createPanelTitle {
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 0 5px 0;
+}
+
+.createPanelInput {
+  border: 0;
+  border-bottom: 1px solid #8e354a;
+  outline: 0;
+}
+
+.createButton {
+  padding: 5px 10px 5px 10px;
+  margin: 5px 30% 0 30%;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 7px;
+}
+
+.createButton:hover{
+  box-shadow: 0 0 15px rgba(0,0,0,0.35);
 }

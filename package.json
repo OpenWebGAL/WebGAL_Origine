@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@icon-park/react": "^1.3.5",
+    "antd": "^4.18.5",
     "axios": "^0.25.0",
     "flyvar": "^1.0.7",
     "react": "^17.0.2",

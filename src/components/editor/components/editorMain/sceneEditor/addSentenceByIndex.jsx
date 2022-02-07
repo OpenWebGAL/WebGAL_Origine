@@ -13,7 +13,7 @@ const AddSentenceByIndex = (props) => {
         }}><Avatar theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog',props.index)
+            createNewSentence('bg',props.index)
         }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
         </div>
         <div className={styles.addSentenceButton} onClick={() => {

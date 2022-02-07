@@ -7,6 +7,7 @@ import {AddOne, GameTwo} from "@icon-park/react";
 
 const Management = () => {
     const [ref, setRef] = useState(true);
+    const [showCreatePanel, setShowCreatePanel] = useState(false);
     useEffect(() => {
         store.set('refManagement', ref);
         store.connect('refManagement', () => {
@@ -42,6 +43,14 @@ const Management = () => {
         showGameList.push(temp);
     }
 
+    const creatGame = (gameName) => {
+        const url = `${runtime.domain}/api/manageGame/createGame/${gameName}`
+        axios.get(url).then(r => {
+            setShowCreatePanel(false);
+            getGameList();
+        })
+    }
+
     return <div>
         <header>
             <nav>
@@ -55,7 +64,22 @@ const Management = () => {
         <main className={styles.main}>
             <div className={styles.subTitle}>
                 游戏列表
-                <span className={styles.addIcon}><AddOne theme="outline" size="18" fill="#8E354A"/> 新建游戏</span>
+                <span onClick={() => setShowCreatePanel(!showCreatePanel)} className={styles.addIcon}><AddOne
+                    theme="outline" size="18" fill="#8E354A"/> 新建游戏</span>
+                {showCreatePanel && <div className={styles.createPanel}>
+                    <div className={styles.createPanelTitle}>
+                        创建游戏
+                    </div>
+                    <div>
+                        游戏名称：<input id={'createInput'} className={styles.createPanelInput}/>
+                    </div>
+                    <div style={{textAlign: 'center'}}>
+                        <div onClick={() => creatGame(document.getElementById('createInput').value)}
+                             className={styles.createButton}>
+                            创建
+                        </div>
+                    </div>
+                </div>}
             </div>
             <div className={styles.gameList}>
                 {showGameList}
