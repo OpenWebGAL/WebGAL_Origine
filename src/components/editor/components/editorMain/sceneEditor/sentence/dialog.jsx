@@ -47,7 +47,7 @@ const Dialog = (props) => {
     //语句编辑的UI
     return <div key={props.index + 'dialog'} className={styles.sentence}>
         <div className={styles.sentenceIndexShow}>语句{props.index+1}:基本对话</div>
-        <ControlPanel data={propsToPanel}/>
+        <ControlPanel index={props.index} data={propsToPanel}/>
         <main>
             <div className={styles.singleOption}>
                 旁白模式<span style={{padding:'0 5px 0 0'}}> </span>

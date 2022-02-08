@@ -17,7 +17,7 @@ const AddSentenceByIndex = (props) => {
         }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog',props.index)
+            createNewSentence('changeScene',props.index)
         }}><Change theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
@@ -25,11 +25,11 @@ const AddSentenceByIndex = (props) => {
         }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>分支选择
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog',props.index)
+            createNewSentence('bgm',props.index)
         }}><FileMusic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>背景音乐
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog',props.index)
+            createNewSentence('video',props.index)
         }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
         </div>
     </div>

@@ -17,6 +17,25 @@ const createSentence = (sentenceType) => {
                 noBg: false,
                 next: false
             }
+            break;
+        case 'bgm':
+            sentence = {
+                type:sentenceType,
+                bgm:'',
+                noBgm:false
+            }
+            break;
+        case 'changeScene':
+            sentence = {
+                type:sentenceType,
+                newScene:'',
+            }
+            break;
+        case 'video':
+            sentence = {
+                type:sentenceType,
+                video:'',
+            }
     }
 
     return sentence;

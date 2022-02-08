@@ -51,11 +51,11 @@ const Bg = (props) => {
     //语句编辑的UI
     return <div key={props.index + 'bg'} className={styles.sentence}>
         <div className={styles.sentenceIndexShow}>语句{props.index+1}:更改背景</div>
-        <ControlPanel data={propsToPanel}/>
+        <ControlPanel index={props.index} data={propsToPanel}/>
         <main>
             <div className={styles.singleOption}>
                 关闭背景<span style={{padding: '0 5px 0 0'}}> </span>
-                <Switch id={'bg_none' + props.index} onChange={bgCheckBoxNo}/>
+                <Switch checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo}/>
                 <span style={{padding: '0 0 0 5px'}}>（将关闭背景）</span>
             </div>
             <div className={styles.singleOption}>
@@ -64,7 +64,7 @@ const Bg = (props) => {
             </div>
             <div className={styles.singleOption}>
                 背景文件：{bgName}
-                <ChooseFile setShow={setBgName} checked={props.data.noBg} id={'vocalPicker'} dir={'background'} set={setConstructor()}/>
+                <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor()}/>
             </div>
         </main>
 
