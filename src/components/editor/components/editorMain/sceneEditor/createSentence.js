@@ -20,22 +20,47 @@ const createSentence = (sentenceType) => {
             break;
         case 'bgm':
             sentence = {
-                type:sentenceType,
-                bgm:'',
-                noBgm:false
+                type: sentenceType,
+                bgm: '',
+                noBgm: false
             }
             break;
         case 'changeScene':
             sentence = {
-                type:sentenceType,
-                newScene:'',
+                type: sentenceType,
+                newScene: '',
             }
             break;
         case 'video':
             sentence = {
-                type:sentenceType,
-                video:'',
+                type: sentenceType,
+                video: '',
             }
+            break;
+        case 'changeP':
+            sentence = {
+                type: sentenceType,
+                newP: '',
+                next: false,
+                noP: false,
+                pos: '',
+            }
+            break;
+        case 'choose':
+            sentence = {
+                type: sentenceType,
+                chooseItem: [
+                    {
+                        text: '在此填入分支的名称',
+                        scene: '',
+                    },
+                    {
+                        text: '在此填入分支的名称',
+                        scene: '',
+                    }
+                ]
+            }
+            break;
     }
 
     return sentence;

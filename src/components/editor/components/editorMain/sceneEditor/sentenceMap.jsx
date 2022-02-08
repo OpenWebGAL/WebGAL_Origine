@@ -2,8 +2,9 @@ import Dialog from "./sentence/dialog";
 import Bg from "./sentence/bg";
 import Bgm from "./sentence/bgm";
 import ChangeScene from "./sentence/changeScene";
-import {Plan} from "@icon-park/react";
 import PlayVideo from "./sentence/playVideo";
+import ChangeP from "./sentence/changeP";
+import ChooseScene from "./sentence/chooseScene";
 
 const sentenceMap = (sentence, index) => {
     let temp;
@@ -22,6 +23,12 @@ const sentenceMap = (sentence, index) => {
             break;
         case 'video':
             temp = <PlayVideo data={sentence} index={index} key={index}/>;
+            break;
+        case 'changeP':
+            temp = <ChangeP data={sentence} index={index} key={index}/>;
+            break;
+        case 'choose':
+            temp = <ChooseScene data={sentence} index={index} key={index}/>;
             break;
     }
     return temp;

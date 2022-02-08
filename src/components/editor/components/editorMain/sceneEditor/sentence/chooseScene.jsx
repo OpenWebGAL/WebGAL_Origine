@@ -1,0 +1,82 @@
+import runtime from "../../../../controller/runtime";
+import store from "../../../../store/editorStore";
+import {useEffect, useState} from "react";
+import styles from './sentence.module.scss'
+import ControlPanel from "./controlPanel";
+import ChooseFile from "../../../chooseFile";
+import {AddFour, DoubleRight} from "@icon-park/react";
+
+const ChooseScene = (props) => {
+    const [showAddPre, setShowAddPre] = useState(false);
+    const [showAddAfter, setShowAddAfter] = useState(false);
+
+    //生成前序和后序index
+    const indexPre = props.index;
+    const indexAfter = props.index + 1;
+
+    const propsToPanel = {showAddPre, setShowAddPre, showAddAfter, setShowAddAfter, indexPre, indexAfter};
+
+    //用于控制语句内容的变更
+    useEffect(() => {
+        for (let i = 0; i < props.data.chooseItem.length; i++) {
+            document.getElementById('chooseInput' + props.index + 'itemIndex' + i).value = props.data.chooseItem[i].text;
+        }
+    })
+
+    const addChooseItem = () => {
+        runtime.currentSceneSentenceList[props.index].chooseItem.push({
+            text: '在此填入分支的名称',
+            scene: '',
+        });
+        store.set('writeScene', !store.get('writeScene'));
+    }
+
+    const updateText = (id) => {
+        const updateIndex = parseInt(id.split('Index')[1]);
+        console.log(updateIndex);
+        runtime.currentSceneSentenceList[props.index].chooseItem[updateIndex].text = document.getElementById(id).value;
+        store.set('writeScene', !store.get('writeScene'));
+    }
+
+    const setConstructor = (index) => {
+        return (value) => {
+            runtime.currentSceneSentenceList[props.index].chooseItem[index].scene = value;
+            store.set('writeScene', !store.get('writeScene'));
+        }
+    }
+
+    //构造每一个分支的选项列表
+    let ChooseItemList = [];
+    let chooseItemIndex = 0;
+    for (const e of props.data.chooseItem) {
+        const inputId = 'chooseInput' + props.index + 'itemIndex' + chooseItemIndex;
+        let temp = <div key={chooseItemIndex} className={styles.singleOption}>
+            分支名称：
+            <input className={styles.dialog_input} style={{width:'200px'}} onChange={() => {
+                updateText(inputId);
+            }}
+                   id={inputId}/>
+            <DoubleRight theme="outline" size="24" fill="#333"/>
+            跳转的场景：{e.scene}
+            <ChooseFile id={'scenePicker'} dir={'scene'} set={setConstructor(chooseItemIndex)}/>
+        </div>
+        ChooseItemList.push(temp);
+        chooseItemIndex++;
+    }
+
+    //语句编辑的UI
+    return <div key={props.index + 'choose'} className={styles.sentence}>
+        <div className={styles.sentenceIndexShow}>语句{props.index + 1}:分支跳转</div>
+        <ControlPanel index={props.index} data={propsToPanel}/>
+        <main>
+            <div style={{display: 'flex', padding: '5px 0 0 0'}}>
+                <div onClick={addChooseItem} className={styles.sentenceButton}>
+                    <AddFour theme="outline" size="16" fill="#333" style={{padding:'0 5px 0 0'}}/>添加分支
+                </div>
+            </div>
+            {ChooseItemList}
+        </main>
+    </div>
+}
+
+export default ChooseScene;

@@ -57,6 +57,7 @@ const Dialog = (props) => {
             <div className={styles.singleOption}>
                 角色：
                 <input className={styles.dialog_input} onChange={updateThis} id={'speakerInput' + props.index}/>
+                <span style={{padding:'0 0 0 5px'}}>提示：留空可以继承上一条对话的角色名</span>
             </div>
             <div className={styles.singleOption}>
                 对话：
