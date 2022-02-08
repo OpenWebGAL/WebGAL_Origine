@@ -1,6 +1,7 @@
 const runtimeTemplate = {
     editorTag: '游戏配置',
-    domain: 'http://localhost',
+    // domain: 'http://localhost',
+    domain:'',
     gameList: [],
     currentEditGame: '',
     currentGameConfig: {},
