@@ -48,27 +48,27 @@ const SceneEditor = (props) => {
         }}><Comment theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>添加对话
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('changeP')
         }}><Avatar theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('bg')
         }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('changeScene')
         }}><Change theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('choose')
         }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>分支选择
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('bgm')
         }}><FileMusic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>背景音乐
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('video')
         }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
         </div>
     </div>
