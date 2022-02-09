@@ -32,6 +32,7 @@
 .gameList {
   padding: 10px 10px 10px 10px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .singleGameEntryButton {
