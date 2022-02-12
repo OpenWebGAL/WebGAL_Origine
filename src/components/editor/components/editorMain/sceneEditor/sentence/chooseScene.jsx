@@ -51,14 +51,15 @@ const ChooseScene = (props) => {
     for (const e of props.data.chooseItem) {
         const inputId = 'chooseInput' + props.index + 'itemIndex' + chooseItemIndex;
         let temp = <div key={chooseItemIndex} className={styles.singleOption}>
-            分支名称：
+            <span className={styles.optionTitle}>分支名称</span>
             <input className={styles.dialog_input} style={{width:'200px'}} onChange={() => {
                 updateText(inputId);
             }}
                    id={inputId}/>
-            <DoubleRight theme="outline" size="24" fill="#333"/>
-            跳转的场景：{e.scene}
+            <span className={styles.optionContent}><DoubleRight theme="outline" size="24" fill="#333"/></span>
+            <span className={styles.optionTitle}>跳转的场景</span>
             <ChooseFile id={'scenePicker'} dir={'scene'} set={setConstructor(chooseItemIndex)}/>
+            <span className={styles.optionContent}>{e.scene}</span>
         </div>
         ChooseItemList.push(temp);
         chooseItemIndex++;
@@ -66,8 +67,10 @@ const ChooseScene = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'choose'} className={styles.sentence}>
-        <div className={styles.sentenceIndexShow}>语句{props.index + 1}:分支跳转</div>
-        <ControlPanel index={props.index} data={propsToPanel}/>
+        <div className={styles.topContainer}>
+            <div className={styles.sentenceIndexShow}>#{props.index + 1} 分支选择</div>
+            <ControlPanel index={props.index} data={propsToPanel}/>
+        </div>
         <main>
             <div style={{display: 'flex', padding: '5px 0 0 0'}}>
                 <div onClick={addChooseItem} className={styles.sentenceButton}>

@@ -50,21 +50,26 @@ const Bg = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'bg'} className={styles.sentence}>
-        <div className={styles.sentenceIndexShow}>语句{props.index+1}:更改背景</div>
-        <ControlPanel index={props.index} data={propsToPanel}/>
+        <div className={styles.topContainer}>
+            <div className={styles.sentenceIndexShow}>#{props.index + 1} 更改背景</div>
+            <ControlPanel index={props.index} data={propsToPanel}/>
+        </div>
         <main>
             <div className={styles.singleOption}>
-                关闭背景<span style={{padding: '0 5px 0 0'}}> </span>
-                <Switch checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo}/>
-                <span style={{padding: '0 0 0 5px'}}>（将关闭背景）</span>
+                <span className={styles.optionTitle}>关闭背景</span>
+                <span className={styles.optionContent}>
+                    <Switch checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo}/>
+                    （将关闭背景）
+                </span>
+                <span className={styles.optionTitle}>更改背景后继续下一句</span>
+                <span className={styles.optionContent}>
+                    <Switch id={'bg_next' + props.index} checked={props.data.next} onChange={bgCheckBoxNext}/>
+                </span>
             </div>
             <div className={styles.singleOption}>
-                更改背景后继续下一句<span style={{padding: '0 5px 0 0'}}> </span>
-                <Switch id={'bg_next' + props.index} checked={props.data.next} onChange={bgCheckBoxNext}/>
-            </div>
-            <div className={styles.singleOption}>
-                背景文件：{bgName}
+                <span className={styles.optionTitle}>背景文件</span>
                 <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{bgName}</span>
             </div>
         </main>
 

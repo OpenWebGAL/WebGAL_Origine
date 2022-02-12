@@ -31,12 +31,15 @@ const ChangeScene = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'scene'} className={styles.sentence}>
-        <div className={styles.sentenceIndexShow}>语句{props.index+1}:切换场景</div>
-        <ControlPanel index={props.index} data={propsToPanel}/>
+        <div className={styles.topContainer}>
+            <div className={styles.sentenceIndexShow}>#{props.index+1} 切换场景</div>
+            <ControlPanel index={props.index} data={propsToPanel}/>
+        </div>
         <main>
             <div className={styles.singleOption}>
-                新场景：{sceneName}
+                <span className={styles.optionTitle}>新场景</span>
                 <ChooseFile setShow={setSceneName} id={'scenePicker'} dir={'scene'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{sceneName}</span>
             </div>
         </main>
     </div>

@@ -37,17 +37,22 @@ const Bgm = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'bgm'} className={styles.sentence}>
-        <div className={styles.sentenceIndexShow}>语句{props.index+1}:更改背景音乐</div>
-        <ControlPanel index={props.index} data={propsToPanel}/>
+        <div className={styles.topContainer}>
+            <div className={styles.sentenceIndexShow}>#{props.index + 1} 更改音乐</div>
+            <ControlPanel index={props.index} data={propsToPanel}/>
+        </div>
         <main>
             <div className={styles.singleOption}>
-                关闭背景音乐<span style={{padding: '0 5px 0 0'}}> </span>
-                <Switch id={'bgm_none' + props.index} checked={props.data.noBgm} onChange={bgmCheckBoxNo}/>
-                <span style={{padding: '0 0 0 5px'}}>（将关闭背景音乐）</span>
+                <span className={styles.optionTitle}>关闭背景音乐</span>
+                <span className={styles.optionContent}>
+                    <Switch id={'bgm_none' + props.index} checked={props.data.noBgm} onChange={bgmCheckBoxNo}/>
+                    （将关闭背景音乐）
+                </span>
             </div>
             <div className={styles.singleOption}>
-                背景音乐文件：{bgmName}
+                <span className={styles.optionTitle}>背景音乐文件</span>
                 <ChooseFile setShow={setBgmName} id={'bgmPicker'} dir={'bgm'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{bgmName}</span>
             </div>
         </main>
     </div>

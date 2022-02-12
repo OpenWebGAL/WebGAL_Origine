@@ -1,48 +1,88 @@
-.sentence{
-  font-size: larger;
-  padding: 10px 10px 10px 10px;
+.sentence {
+  font-size: medium;
+  padding: 5px 10px 5px 10px;
   box-sizing: border-box;
-  border: 1px solid rgba(0,0,0,0.1);
-  margin: 10px 15px 10px 15px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.2);
+  border-left: 2px solid #8e354a;
+  margin: 10px 10px 10px 10px;
+  //border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  animation: sentenceIn 0.5s;
 }
 
-.dialog_input{
-  font-size: larger;
+.dialog_input {
+  font-size: medium;
   width: 500px;
-  outline-style: none ;
+  outline-style: none;
   border: 0;
   border-bottom: 2px solid #8e354a;
 }
 
-.singleOption{
-  //padding: 5px 0 5px 0;
-  margin: 5px 0 10px 5px;
-}
-
-.sentenceButtonList{
+.singleOption {
+  line-height: normal;
+  padding: 3px 0 3px 0;
+  margin: 3px 0 3px 0;
   display: flex;
 }
 
-.sentenceButton{
-  font-size: medium;
-  padding: 5px 10px 5px 10px;
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 5px;
+.optionTitle{
+  color: #8e354a;
+  font-weight: bold;
   margin: 0 5px 0 0;
+  border-bottom: 2px solid #8e354a;
+  padding: 3px 5px 3px 5px;
+}
+
+.optionContent{
+  padding: 3px 5px 3px 5px;
+}
+
+.isolate{
+  padding: 0 0 0 5px;
+  margin: 0 5px 0 0 ;
+}
+
+.sentenceButtonList {
+  display: flex;
+}
+
+.sentenceButton {
+  font-size: medium;
+  padding: 3px 5px 3px 5px;
+  //border: 1px solid rgba(0,0,0,0.2);
+  //border-radius: 5px;
+  color: black;
+  margin: 0 3px 0 0;
+  font-weight: normal;
   cursor: pointer;
   position: relative;
 }
 
-.sentenceButton:hover{
-  background-color: rgba(0,0,0,0.1);
-
+.sentenceButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.sentenceIndexShow{
+.sentenceIndexShow {
+  display: flex;
   color: #8e354a;
-  font-size: x-large;
+  font-size: medium;
   font-weight: bold;
-  padding: 0 0 10px 0;
+  padding: 3px 0 3px 0;
+}
+
+.topContainer{
+  display: flex;
+  padding: 3px 5px 3px 5px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.15) inset;
+}
+
+@keyframes sentenceIn {
+  0%{
+    opacity: 0.7;
+    transform: scale(1,1) translate(-15px,0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1,1);
+  }
 }

@@ -44,31 +44,38 @@ const SceneEditor = (props) => {
 
     const showAddSentence = <div className={styles.addSentencePanel}>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('dialog')
+            createNewSentence('dialog');
+            setShowAdd(false);
         }}><Comment theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>添加对话
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('changeP')
+            createNewSentence('changeP');
+            setShowAdd(false);
         }}><Avatar theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('bg')
+            createNewSentence('bg');
+            setShowAdd(false);
         }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('changeScene')
+            createNewSentence('changeScene');
+            setShowAdd(false);
         }}><Change theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('choose')
+            createNewSentence('choose');
+            setShowAdd(false);
         }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>分支选择
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('bgm')
+            createNewSentence('bgm');
+            setShowAdd(false);
         }}><FileMusic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>背景音乐
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('video')
+            createNewSentence('video');
+            setShowAdd(false);
         }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
         </div>
     </div>

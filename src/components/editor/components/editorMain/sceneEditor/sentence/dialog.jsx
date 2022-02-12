@@ -46,14 +46,12 @@ const Dialog = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'dialog'} className={styles.sentence}>
-        <div className={styles.sentenceIndexShow}>语句{props.index+1}:基本对话</div>
-        <ControlPanel index={props.index} data={propsToPanel}/>
-        <main>
-            <div className={styles.singleOption}>
-                旁白模式<span style={{padding:'0 5px 0 0'}}> </span>
-                <Switch id={'dialog_pbms'} checked={props.data.ignoreSpeaker} onChange={dialogCheckBoxUpdate} />
-                <span style={{padding:'0 0 0 5px'}}>（将不会显示角色名）</span>
+        <div className={styles.topContainer}>
+            <div className={styles.sentenceIndexShow}>#{props.index+1} 基本对话
             </div>
+            <ControlPanel index={props.index} data={propsToPanel}/>
+        </div>
+        <main>
             <div className={styles.singleOption}>
                 角色：
                 <input className={styles.dialog_input} onChange={updateThis} id={'speakerInput' + props.index}/>
@@ -64,8 +62,14 @@ const Dialog = (props) => {
                 <input className={styles.dialog_input} onChange={updateThis} id={'contentInput' + props.index}/>
             </div>
             <div className={styles.singleOption}>
-                配音文件：{vocalName}
+                <span className={styles.optionTitle}>旁白模式</span>
+                <span className={styles.optionContent}>
+                    <Switch id={'dialog_pbms'} checked={props.data.ignoreSpeaker} onChange={dialogCheckBoxUpdate} />
+                （将不会显示角色名）
+                </span>
+                <div className={styles.optionTitle}>配音文件</div>
                 <ChooseFile setShow={setVocalName} id={'vocalPicker'} dir={'vocal'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{vocalName}</span>
             </div>
         </main>
 

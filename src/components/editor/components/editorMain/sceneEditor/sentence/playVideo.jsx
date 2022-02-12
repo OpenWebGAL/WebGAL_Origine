@@ -31,12 +31,14 @@ const PlayVideo = (props) => {
 
     //语句编辑的UI
     return <div key={props.index + 'scene'} className={styles.sentence}>
-        <div className={styles.sentenceIndexShow}>语句{props.index+1}:播放视频</div>
-        <ControlPanel index={props.index} data={propsToPanel}/>
+        <div className={styles.topContainer}>
+            <div className={styles.sentenceIndexShow}>#{props.index + 1} 播放视频</div>
+            <ControlPanel index={props.index} data={propsToPanel}/></div>
         <main>
             <div className={styles.singleOption}>
-                视频文件：{videoName}
+                <span className={styles.optionTitle}>视频文件</span>
                 <ChooseFile setShow={setVideoName} id={'videoPicker'} dir={'video'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{videoName}</span>
             </div>
         </main>
     </div>
