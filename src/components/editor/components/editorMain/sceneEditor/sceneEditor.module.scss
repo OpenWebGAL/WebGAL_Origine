@@ -38,3 +38,19 @@
   overflow: auto;
   height: calc(100vh - 160px);
 }
+
+.sentence{
+  display: flex;
+  width: 78vw;
+  margin-top: 5px;
+}
+
+.lineNumber{
+  color:rgba(0,0,0,0.75);
+  padding: 0 5px 0 0;
+  font-size: medium;
+}
+
+.sentenceMain{
+  width: 76vw;
+}

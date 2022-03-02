@@ -1,9 +1,9 @@
 import runtime from "../../../../controller/runtime";
 import store from "../../../../store/editorStore";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import styles from './sentence.module.scss'
 import ControlPanel from "./controlPanel";
-import {Switch} from "antd";
+import { Switch } from "antd";
 import ChooseFile from "../../../chooseFile";
 
 const Bg = (props) => {
@@ -14,7 +14,7 @@ const Bg = (props) => {
     const indexPre = props.index;
     const indexAfter = props.index + 1;
 
-    const propsToPanel = {showAddPre, setShowAddPre, showAddAfter, setShowAddAfter, indexPre, indexAfter};
+    const propsToPanel = { showAddPre, setShowAddPre, showAddAfter, setShowAddAfter, indexPre, indexAfter };
 
     //用于控制语句内容的变更
     useEffect(() => {
@@ -51,24 +51,26 @@ const Bg = (props) => {
     //语句编辑的UI
     return <div key={props.index + 'bg'} className={styles.sentence}>
         <div className={styles.topContainer}>
-            <div className={styles.sentenceIndexShow}>#{props.index + 1} 更改背景</div>
-            <ControlPanel index={props.index} data={propsToPanel}/>
+            <div className={styles.sentenceIndexShow}>
+                {/* #{props.index + 1}  */}
+                更改背景</div>
+            <ControlPanel index={props.index} data={propsToPanel} />
         </div>
         <main>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>关闭背景</span>
                 <span className={styles.optionContent}>
-                    <Switch checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo}/>
+                    <Switch checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo} />
                     （将关闭背景）
                 </span>
                 <span className={styles.optionTitle}>更改背景后继续下一句</span>
                 <span className={styles.optionContent}>
-                    <Switch id={'bg_next' + props.index} checked={props.data.next} onChange={bgCheckBoxNext}/>
+                    <Switch id={'bg_next' + props.index} checked={props.data.next} onChange={bgCheckBoxNext} />
                 </span>
             </div>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>背景文件</span>
-                <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor()}/>
+                <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor()} />
                 <span className={styles.optionContent}>{bgName}</span>
             </div>
         </main>

@@ -90,7 +90,7 @@ const ChooseFile = (props) => {
                 }
                 setShowChooseWindow(!showChooseWindow)
             }}>
-                <Edit theme="outline" size="18" fill="#333"/> 选择文件
+                <Edit theme="outline" size="16" fill="#333"/> 选择文件
             </div>
             {/*<div className={styles.choosed}>*/}
             {/*    {choosedFile !== '' ? choosedFile : '未更改'}*/}

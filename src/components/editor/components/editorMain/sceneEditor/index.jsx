@@ -1,9 +1,9 @@
 import styles from './sceneEditor.module.scss'
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import store from "../../../store/editorStore";
 import runtime from "../../../controller/runtime";
 import axios from "axios";
-import {Avatar, Change, Comment, FileMusic, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
+import { Avatar, Change, Comment, FileMusic, Pic, SplitTurnDownRight, Video } from "@icon-park/react";
 import createSentence from "./createSentence";
 import sentenceMap from "./sentenceMap";
 import 'antd/dist/antd.css';
@@ -39,44 +39,49 @@ const SceneEditor = (props) => {
     for (let i = 0; i < showSentenceGenerateArray.length; i++) {
         const sentence = showSentenceGenerateArray[i];
         const temp = sentenceMap(sentence, i);
-        showSentenceList.push(temp);
+        //每一个语句的卡片
+        const t = <div className={styles.sentence}>
+            <div className={styles.lineNumber}>{i+1}</div>
+            <div className={styles.sentenceMain}>{temp}</div>
+        </div>
+        showSentenceList.push(t);
     }
 
     const showAddSentence = <div className={styles.addSentencePanel}>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('dialog');
             setShowAdd(false);
-        }}><Comment theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>添加对话
+        }}><Comment theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />添加对话
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('changeP');
             setShowAdd(false);
-        }}><Avatar theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
+        }}><Avatar theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />切换立绘
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('bg');
             setShowAdd(false);
-        }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
+        }}><Pic theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />切换背景
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('changeScene');
             setShowAdd(false);
-        }}><Change theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
+        }}><Change theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />场景跳转
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('choose');
             setShowAdd(false);
-        }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>分支选择
+        }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />分支选择
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('bgm');
             setShowAdd(false);
-        }}><FileMusic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>背景音乐
+        }}><FileMusic theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />背景音乐
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('video');
             setShowAdd(false);
-        }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
+        }}><Video theme="outline" size='18' fill="#333" style={{ padding: '0 5px 0 0' }} />插入视频
         </div>
     </div>
 
@@ -131,11 +136,11 @@ function writeSence() {
         sceneData: runtime.currentSceneSentenceList
     };
     axios.post(url, data).then(r => {
-            updateSceneFromFile();
-        }
+        updateSceneFromFile();
+    }
     ).catch(e => console.log(e));
 }
 
-export {updateSceneFromFile, createNewSentence, writeSence}
+export { updateSceneFromFile, createNewSentence, writeSence }
 
 export default SceneEditor;

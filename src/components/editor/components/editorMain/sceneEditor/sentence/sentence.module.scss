@@ -4,14 +4,15 @@
   box-sizing: border-box;
   border: 1px solid rgba(0,0,0,0.2);
   border-left: 2px solid #8e354a;
-  margin: 10px 10px 10px 10px;
+  // width: 76vw;
+  // margin: 10px 10px 10px 10px;
   //border-radius: 5px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   animation: sentenceIn 0.5s;
 }
 
 .dialog_input {
-  font-size: medium;
+  font-size: small;
   width: 500px;
   outline-style: none;
   border: 0;
@@ -23,6 +24,7 @@
   padding: 3px 0 3px 0;
   margin: 3px 0 3px 0;
   display: flex;
+  font-size: small;
 }
 
 .optionTitle{
@@ -47,7 +49,7 @@
 }
 
 .sentenceButton {
-  font-size: medium;
+  font-size: small;
   padding: 3px 5px 3px 5px;
   //border: 1px solid rgba(0,0,0,0.2);
   //border-radius: 5px;
@@ -65,7 +67,7 @@
 .sentenceIndexShow {
   display: flex;
   color: #8e354a;
-  font-size: medium;
+  font-size: small;
   font-weight: bold;
   padding: 3px 0 3px 0;
 }

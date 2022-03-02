@@ -47,7 +47,9 @@ const Dialog = (props) => {
     //语句编辑的UI
     return <div key={props.index + 'dialog'} className={styles.sentence}>
         <div className={styles.topContainer}>
-            <div className={styles.sentenceIndexShow}>#{props.index+1} 基本对话
+            <div className={styles.sentenceIndexShow}>
+                {/* #{props.index+1}  */}
+                基本对话
             </div>
             <ControlPanel index={props.index} data={propsToPanel}/>
         </div>

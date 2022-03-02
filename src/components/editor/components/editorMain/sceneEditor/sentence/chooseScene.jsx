@@ -1,10 +1,10 @@
 import runtime from "../../../../controller/runtime";
 import store from "../../../../store/editorStore";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import styles from './sentence.module.scss'
 import ControlPanel from "./controlPanel";
 import ChooseFile from "../../../chooseFile";
-import {AddFour, DoubleRight} from "@icon-park/react";
+import { AddFour, DoubleRight } from "@icon-park/react";
 
 const ChooseScene = (props) => {
     const [showAddPre, setShowAddPre] = useState(false);
@@ -14,7 +14,7 @@ const ChooseScene = (props) => {
     const indexPre = props.index;
     const indexAfter = props.index + 1;
 
-    const propsToPanel = {showAddPre, setShowAddPre, showAddAfter, setShowAddAfter, indexPre, indexAfter};
+    const propsToPanel = { showAddPre, setShowAddPre, showAddAfter, setShowAddAfter, indexPre, indexAfter };
 
     //用于控制语句内容的变更
     useEffect(() => {
@@ -52,13 +52,13 @@ const ChooseScene = (props) => {
         const inputId = 'chooseInput' + props.index + 'itemIndex' + chooseItemIndex;
         let temp = <div key={chooseItemIndex} className={styles.singleOption}>
             <span className={styles.optionTitle}>分支名称</span>
-            <input className={styles.dialog_input} style={{width:'200px'}} onChange={() => {
+            <input className={styles.dialog_input} style={{ width: '200px' }} onChange={() => {
                 updateText(inputId);
             }}
-                   id={inputId}/>
-            <span className={styles.optionContent}><DoubleRight theme="outline" size="24" fill="#333"/></span>
+                id={inputId} />
+            <span className={styles.optionContent}><DoubleRight theme="outline" size="24" fill="#333" /></span>
             <span className={styles.optionTitle}>跳转的场景</span>
-            <ChooseFile id={'scenePicker'} dir={'scene'} set={setConstructor(chooseItemIndex)}/>
+            <ChooseFile id={'scenePicker'} dir={'scene'} set={setConstructor(chooseItemIndex)} />
             <span className={styles.optionContent}>{e.scene}</span>
         </div>
         ChooseItemList.push(temp);
@@ -68,13 +68,15 @@ const ChooseScene = (props) => {
     //语句编辑的UI
     return <div key={props.index + 'choose'} className={styles.sentence}>
         <div className={styles.topContainer}>
-            <div className={styles.sentenceIndexShow}>#{props.index + 1} 分支选择</div>
-            <ControlPanel index={props.index} data={propsToPanel}/>
+            <div className={styles.sentenceIndexShow}>
+                {/* #{props.index + 1} */}
+                分支选择</div>
+            <ControlPanel index={props.index} data={propsToPanel} />
         </div>
         <main>
-            <div style={{display: 'flex', padding: '5px 0 0 0'}}>
+            <div style={{ display: 'flex', padding: '5px 0 0 0' }}>
                 <div onClick={addChooseItem} className={styles.sentenceButton}>
-                    <AddFour theme="outline" size="16" fill="#333" style={{padding:'0 5px 0 0'}}/>添加分支
+                    <AddFour theme="outline" size="16" fill="#333" style={{ padding: '0 5px 0 0' }} />添加分支
                 </div>
             </div>
             {ChooseItemList}
