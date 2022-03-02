@@ -47,7 +47,7 @@ const Bgm = (props) => {
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>关闭背景音乐</span>
                 <span className={styles.optionContent}>
-                    <Switch id={'bgm_none' + props.index} checked={props.data.noBgm} onChange={bgmCheckBoxNo} />
+                    <Switch size={'small'} id={'bgm_none' + props.index} checked={props.data.noBgm} onChange={bgmCheckBoxNo} />
                     （将关闭背景音乐）
                 </span>
             </div>

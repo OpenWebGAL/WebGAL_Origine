@@ -60,12 +60,12 @@ const Bg = (props) => {
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>关闭背景</span>
                 <span className={styles.optionContent}>
-                    <Switch checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo} />
+                    <Switch size={'small'} checked={props.data.noBg} id={'bg_none' + props.index} onChange={bgCheckBoxNo} />
                     （将关闭背景）
                 </span>
                 <span className={styles.optionTitle}>更改背景后继续下一句</span>
                 <span className={styles.optionContent}>
-                    <Switch id={'bg_next' + props.index} checked={props.data.next} onChange={bgCheckBoxNext} />
+                    <Switch size={'small'} id={'bg_next' + props.index} checked={props.data.next} onChange={bgCheckBoxNext} />
                 </span>
             </div>
             <div className={styles.singleOption}>

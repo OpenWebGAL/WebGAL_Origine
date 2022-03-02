@@ -66,7 +66,7 @@ const Dialog = (props) => {
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>旁白模式</span>
                 <span className={styles.optionContent}>
-                    <Switch id={'dialog_pbms'} checked={props.data.ignoreSpeaker} onChange={dialogCheckBoxUpdate} />
+                    <Switch size={'small'} id={'dialog_pbms'} checked={props.data.ignoreSpeaker} onChange={dialogCheckBoxUpdate} />
                 （将不会显示角色名）
                 </span>
                 <div className={styles.optionTitle}>配音文件</div>
