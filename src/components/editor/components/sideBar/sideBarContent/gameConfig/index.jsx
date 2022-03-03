@@ -66,7 +66,7 @@ const GameConfig = () => {
                 游戏名称
             </div>
             <div>
-                <input onInput={setGameName} id={"gameNameInput"} className={styles.gameNameInput}/>
+                <input onBlur={setGameName} id={"gameNameInput"} className={styles.gameNameInput}/>
             </div>
         </div>
         <div>

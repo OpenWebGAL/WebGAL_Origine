@@ -52,7 +52,7 @@ const ChooseScene = (props) => {
         const inputId = 'chooseInput' + props.index + 'itemIndex' + chooseItemIndex;
         let temp = <div key={chooseItemIndex} className={styles.singleOption}>
             <span className={styles.optionTitle}>分支名称</span>
-            <input className={styles.dialog_input} style={{ width: '200px' }} onChange={() => {
+            <input className={styles.dialog_input} style={{ width: '200px' }} onBlur={() => {
                 updateText(inputId);
             }}
                 id={inputId} />

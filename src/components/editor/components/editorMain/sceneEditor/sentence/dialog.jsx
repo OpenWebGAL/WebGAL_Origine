@@ -56,12 +56,12 @@ const Dialog = (props) => {
         <main>
             <div className={styles.singleOption}>
                 角色：
-                <input className={styles.dialog_input} onChange={updateThis} id={'speakerInput' + props.index}/>
+                <input className={styles.dialog_input} onBlur={updateThis} id={'speakerInput' + props.index}/>
                 <span style={{padding:'0 0 0 5px'}}>提示：留空可以继承上一条对话的角色名</span>
             </div>
             <div className={styles.singleOption}>
                 对话：
-                <input className={styles.dialog_input} onChange={updateThis} id={'contentInput' + props.index}/>
+                <input className={styles.dialog_input} onBlur={updateThis} id={'contentInput' + props.index}/>
             </div>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>旁白模式</span>
