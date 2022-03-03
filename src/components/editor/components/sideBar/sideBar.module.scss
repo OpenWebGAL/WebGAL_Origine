@@ -25,6 +25,14 @@
   border-radius: 30px;
 }
 
+.optionMarkerOff {
+  height: 4px;
+  width: 30%;
+  background-color: rgba(0,0,0,0.15);
+  margin: 3px 35% 3px 35%;
+  border-radius: 30px;
+}
+
 .chooseBox {
 
 }
@@ -54,7 +62,7 @@
   font-size: smaller;
   font-weight: bold;
   cursor: pointer;
-  padding: 10px 10px 5px 10px;
+  padding: 5px 15px 5px 15px;
   margin: 5px 5px 5px 5px;
 }
 
@@ -62,11 +70,11 @@
   font-size: smaller;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid rgba(0,0,0,0.1);
+  //border: 1px solid rgba(0,0,0,0.1);
   padding: 5px 15px 5px 15px;
   margin: 5px 5px 5px 5px;
-  border-radius: 7px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.07) inset;
+  //border-radius: 7px;
+  //box-shadow: 0 0 10px rgba(0,0,0,0.07) inset;
 }
 
 .sideBarContent {

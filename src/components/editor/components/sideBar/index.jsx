@@ -22,7 +22,7 @@ const SideBar = () => {
         if (e === runtime.editorTag) {
             optionMarker = <div className={styles.optionMarker}/>;
         } else {
-            optionMarker = <div/>;
+            optionMarker = <div className={styles.optionMarkerOff}/>;
         }
         const temp = <div key={e} className={e=== runtime.editorTag?styles.tagButtonOn:styles.tagButton} onClick={() => {
             runtime.editorTag = e;
