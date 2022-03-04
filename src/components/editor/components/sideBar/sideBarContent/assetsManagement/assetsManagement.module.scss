@@ -25,24 +25,29 @@
 }
 
 .dirButton{
-  padding: 5px 10px 5px 10px;
+  padding: 3px 5px 3px 5px;
   box-sizing: border-box;
   word-break: break-all;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  //border: 1px solid rgba(0,0,0,0.1);
+  //box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   margin: 0 0 5px 0 ;
-  border-radius: 7px;
+  //border-radius: 7px;
   cursor: pointer;
 }
 
 .fileElement{
-  padding: 5px 10px 5px 10px;
+  padding: 3px 5px 3px 5px;
   box-sizing: border-box;
   word-break: break-all;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  //border: 1px solid rgba(0,0,0,0.1);
+  //box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   margin: 0 0 5px 0 ;
-  border-radius: 7px;
+  //border-radius: 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  /*当文本溢出包含元素时，以省略号表示超出的文本*/
+  text-overflow: ellipsis;
+  width: 15vw;
 }
 
 .title{
@@ -58,9 +63,9 @@
 .currentDirShow{
   padding: 5px 0 5px 10px;
   margin: 5px 0 5px 0;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 7px;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.2);
+  //border-radius: 7px;
+  //box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
   box-sizing: border-box;
 }
 
@@ -68,7 +73,22 @@
   padding: 2px 2px 2px 2px;
   margin: 5px 5px 5px 0;
   border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 7px;
+  //border-radius: 7px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.uploadTitle{
+  color: #8e354a;
+  font-weight: bold;
+  font-size: medium;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  margin: 0 0 5px 0;
+}
+
+.uploadButton{
+  text-align: center;
+  margin: 7px 30% 3px 30%;
+  border: 1px solid rgba(0,0,0,0.15);
   cursor: pointer;
 }

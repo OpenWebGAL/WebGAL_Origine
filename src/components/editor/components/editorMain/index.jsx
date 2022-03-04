@@ -2,7 +2,7 @@ import styles from './editorMain.module.scss';
 import {useEffect, useState} from "react";
 import store from "../../store/editorStore";
 import runtime from "../../controller/runtime";
-import {CloseSmall, ViewGridList} from "@icon-park/react";
+import {CloseSmall, PlayTwo, ViewGridList} from "@icon-park/react";
 import SceneEditor from "./sceneEditor";
 
 const EditorMain = () => {
@@ -57,7 +57,7 @@ const EditorMain = () => {
         let temp;
         if (e === runtime.currentEditScene) {
             temp = <div key={e} className={styles.tagOpened}>
-                <ViewGridList theme="outline" size="20" fill="#333" className={styles.tagIcon}/>
+                <PlayTwo theme="outline" size="20" fill="#333" className={styles.tagIcon}/>
                 {e}
                 <CloseSmall theme="outline" size="20" fill="#333" className={styles.tagIcon} onClick={() => {
                     closeTag(e)
@@ -67,7 +67,7 @@ const EditorMain = () => {
             temp = <div key={e} className={styles.tag} onClick={() => {
                 switchTag(e)
             }}>
-                <ViewGridList theme="outline" size="20" fill="#333" className={styles.tagIcon}/>
+                <PlayTwo theme="outline" size="20" fill="#333" className={styles.tagIcon}/>
                 {e}
                 <CloseSmall theme="outline" size="20" fill="#333" className={styles.tagIcon} onClick={(event) => {
                     event.preventDefault();

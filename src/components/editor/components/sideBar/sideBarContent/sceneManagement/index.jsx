@@ -53,7 +53,7 @@ const SceneManagement = () => {
             showThis = true;
         }
         const temp = <div className={styles.scene} key={e} onClick={() => openSceneEdit(e)}>
-            <PlayTwo theme="outline" size="16" fill="#333" style={{padding:'0 5px 0 0'}}/>{e}
+            <PlayTwo theme="outline" size="16" fill="#333" style={{padding: '0 5px 0 0'}}/>{e}
         </div>
         if (showThis)
             showSceneList.push(temp);
@@ -67,7 +67,8 @@ const SceneManagement = () => {
         <div className={styles.newSceneButton} onClick={() => {
             setShowAddScene(!showAddScene);
         }}>
-            <AddOne theme="outline" size="18" fill="#333" style={{padding:'0 5px 0 0'}}/>
+            <AddOne theme="outline" size="18" fill="#333"
+                    style={{padding: '0 5px 0 0', transform: 'translate(0,2px)'}}/>
             新建场景
         </div>
         <div>

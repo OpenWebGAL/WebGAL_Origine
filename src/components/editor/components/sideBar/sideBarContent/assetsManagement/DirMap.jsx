@@ -1,4 +1,4 @@
-import {Avatar, FileMusic, FolderClose, Pic, Video, VoiceMessage} from "@icon-park/react";
+import {Avatar, DocDetail, FileMusic, FolderClose, Pic, Video, VoiceMessage} from "@icon-park/react";
 
 const dirMap = {
     background: '背景',
@@ -10,23 +10,25 @@ const dirMap = {
 
 
 const IconMap = (props) => {
-    let icon = <FolderClose theme="outline" size="24" fill="#333"/>;
+    let icon = <FolderClose theme="outline" size="22" fill="#333"/>;
     switch (props.icon) {
         case 'background':
-            icon = <Pic theme="outline" size="24" fill="#333"/>;
+            icon = <Pic theme="outline" size="22" fill="#333"/>;
             break;
         case 'bgm':
-            icon = <FileMusic theme="outline" size="24" fill="#333"/>;
+            icon = <FileMusic theme="outline" size="22" fill="#333"/>;
             break;
         case 'figure':
-            icon = <Avatar theme="outline" size="24" fill="#333"/>;
+            icon = <Avatar theme="outline" size="22" fill="#333"/>;
             break;
         case 'video':
-            icon = <Video theme="outline" size="24" fill="#333"/>;
+            icon = <Video theme="outline" size="22" fill="#333"/>;
             break;
         case 'vocal':
-            icon = <VoiceMessage theme="outline" size="24" fill="#333"/>;
+            icon = <VoiceMessage theme="outline" size="22" fill="#333"/>;
             break;
+        case 'file':
+            icon = <DocDetail theme="outline" size="22" fill="#333"/>
         default:
             break;
     }
