@@ -41,9 +41,11 @@ const Bgm = (props) => {
             <div className={styles.sentenceIndexShow}>
                 {/* #{props.index + 1} */}
                 更改音乐</div>
-            <ControlPanel index={props.index} data={propsToPanel} />
+            <div className={styles.barContainer}>
+                <ControlPanel index={props.index} data={propsToPanel} />
+            </div>
         </div>
-        <main>
+        <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>关闭背景音乐</span>
                 <span className={styles.optionContent}>

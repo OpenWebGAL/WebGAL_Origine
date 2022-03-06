@@ -61,9 +61,9 @@ const SceneManagement = () => {
 
 
     return <div>
-        <div className={styles.titleText}>
-            场景管理
-        </div>
+        {/*<div className={styles.titleText}>*/}
+        {/*    场景管理*/}
+        {/*</div>*/}
         <div className={styles.newSceneButton} onClick={() => {
             setShowAddScene(!showAddScene);
         }}>

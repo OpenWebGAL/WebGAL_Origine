@@ -56,9 +56,11 @@ const ChangeP = (props) => {
             <div className={styles.sentenceIndexShow}>
                 {/* #{props.index+1}  */}
                 切换立绘</div>
-            <ControlPanel index={props.index} data={propsToPanel} />
+            <div className={styles.barContainer}>
+                <ControlPanel index={props.index} data={propsToPanel} />
+            </div>
         </div>
-        <main>
+        <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>关闭立绘</span>
                 <span className={styles.optionContent}><Switch size={'small'} id={'p_none'} checked={props.data.noP} onChange={changePnoneCheckBoxUpdate} /></span>

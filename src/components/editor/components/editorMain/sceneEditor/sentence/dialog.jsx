@@ -51,9 +51,11 @@ const Dialog = (props) => {
                 {/* #{props.index+1}  */}
                 基本对话
             </div>
-            <ControlPanel index={props.index} data={propsToPanel}/>
+            <div className={styles.barContainer}>
+                <ControlPanel index={props.index} data={propsToPanel} />
+            </div>
         </div>
-        <main>
+        <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 角色：
                 <input className={styles.dialog_input} onBlur={updateThis} id={'speakerInput' + props.index}/>

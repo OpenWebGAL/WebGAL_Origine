@@ -35,8 +35,11 @@ const PlayVideo = (props) => {
             <div className={styles.sentenceIndexShow}>
                 {/* #{props.index + 1}  */}
                 播放视频</div>
-            <ControlPanel index={props.index} data={propsToPanel} /></div>
-        <main>
+            <div className={styles.barContainer}>
+                <ControlPanel index={props.index} data={propsToPanel} />
+            </div>
+        </div>
+        <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>视频文件</span>
                 <ChooseFile setShow={setVideoName} id={'videoPicker'} dir={'video'} set={setConstructor()} />

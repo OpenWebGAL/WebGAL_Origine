@@ -136,9 +136,9 @@ const AssetsManagement = () => {
     }
 
     return <div>
-        <div className={styles.title}>
-            素材管理
-        </div>
+        {/*<div className={styles.title}>*/}
+        {/*    素材管理*/}
+        {/*</div>*/}
         {runtime.currentDir !== '' &&
             <div className={styles.currentDirShow}>
                 {runtime.currentDir}

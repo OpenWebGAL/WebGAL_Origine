@@ -33,6 +33,12 @@
   margin: 0 0 5px 0 ;
   //border-radius: 7px;
   cursor: pointer;
+  min-width: 17vw;
+}
+
+
+.dirButton:hover{
+  background-color: rgba(0,0,0,0.1);
 }
 
 .fileElement{
@@ -48,6 +54,11 @@
   /*当文本溢出包含元素时，以省略号表示超出的文本*/
   text-overflow: ellipsis;
   width: 15vw;
+  cursor: pointer;
+}
+
+.fileElement:hover{
+  background-color: rgba(0,0,0,0.1);
 }
 
 .title{
@@ -61,21 +72,30 @@
 }
 
 .currentDirShow{
-  padding: 5px 0 5px 10px;
-  margin: 5px 0 5px 0;
-  border: 1px solid rgba(0,0,0,0.2);
+  padding: 1px 0 1px 5px;
+  margin: 5px 0 2px 0;
+  border: 2px solid rgba(0,0,0,0.1);
   //border-radius: 7px;
   //box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
   box-sizing: border-box;
+  text-transform:uppercase;
+  font-weight: bold;
+  font-size: smaller;
 }
 
 .panelButton{
   padding: 2px 2px 2px 2px;
-  margin: 5px 5px 5px 0;
-  border: 1px solid rgba(0,0,0,0.2);
+  margin: 2px 3px 2px 0;
+  border: 2px solid rgba(0,0,0,0.1);
   //border-radius: 7px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  //box-shadow: 0 0 5px rgba(0,0,0,0.1);
   cursor: pointer;
+  //border-radius: 5px;
+}
+
+.panelButton:hover{
+  background-color: rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
 .uploadTitle{

@@ -4,13 +4,19 @@
 
 .topButton{
   padding: 5px 10px 5px 10px;
-  border: 1px solid rgba(0,0,0,0.2);
-  margin: 5px 5px 5px 5px;
+  border: 2px solid rgba(0,0,0,0.1);
+  margin: 10px 5px 5px 5px;
   border-radius: 5px;
-  background-color: #8e354a;
-  color: white;
+  //background-color: #8e354a;
+  color: #8e354a;
   cursor: pointer;
   font-size: smaller;
+  font-weight: bold;
+}
+
+.topButton:hover{
+  background-color: rgba(0,0,0,0.03);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .addSentencePanel{
@@ -42,14 +48,16 @@
 .sentence{
   display: flex;
   width: 78vw;
-  margin-top: 5px;
+  margin-top: 3px;
   animation: sentenceIn 0.5s;
 }
 
 .lineNumber{
-  color:rgba(0,0,0,0.75);
+  transform: translate(5px,13px);
+  color:rgba(0,0,0,0.5);
   padding: 0 5px 0 0;
   font-size: medium;
+  font-weight: bold;
 }
 
 .sentenceMain{

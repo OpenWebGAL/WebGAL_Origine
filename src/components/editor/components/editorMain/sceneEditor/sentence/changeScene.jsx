@@ -35,9 +35,11 @@ const ChangeScene = (props) => {
             <div className={styles.sentenceIndexShow}>
                 {/* #{props.index+1}  */}
                 切换场景</div>
-            <ControlPanel index={props.index} data={propsToPanel} />
+            <div className={styles.barContainer}>
+                <ControlPanel index={props.index} data={propsToPanel} />
+            </div>
         </div>
-        <main>
+        <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>新场景</span>
                 <ChooseFile setShow={setSceneName} id={'scenePicker'} dir={'scene'} set={setConstructor()} />

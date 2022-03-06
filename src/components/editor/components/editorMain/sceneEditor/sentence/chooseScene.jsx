@@ -71,9 +71,11 @@ const ChooseScene = (props) => {
             <div className={styles.sentenceIndexShow}>
                 {/* #{props.index + 1} */}
                 分支选择</div>
-            <ControlPanel index={props.index} data={propsToPanel} />
+            <div className={styles.barContainer}>
+                <ControlPanel index={props.index} data={propsToPanel} />
+            </div>
         </div>
-        <main>
+        <main className={styles.mainEdit}>
             <div style={{ display: 'flex', padding: '5px 0 0 0' }}>
                 <div onClick={addChooseItem} className={styles.sentenceButton}>
                     <AddFour theme="outline" size="16" fill="#333" style={{ padding: '0 5px 0 0' }} />添加分支
