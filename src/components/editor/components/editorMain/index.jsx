@@ -59,7 +59,7 @@ const EditorMain = () => {
             temp = <div key={e} className={styles.tagOpened}>
                 <PlayTwo theme="outline" size="20" fill="#333" className={styles.tagIcon}/>
                 {e}
-                <CloseSmall theme="outline" size="20" fill="#333" className={styles.tagIcon} onClick={() => {
+                <CloseSmall theme="outline" size="20" fill="#333" className={styles.closeIcon} onClick={() => {
                     closeTag(e)
                 }}/>
             </div>

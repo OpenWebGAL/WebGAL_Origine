@@ -3,6 +3,7 @@
 .dirButtonContainer{
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 .icon_small{
@@ -33,7 +34,8 @@
   margin: 0 0 5px 0 ;
   //border-radius: 7px;
   cursor: pointer;
-  min-width: 17vw;
+  box-sizing: border-box;
+  min-width: 100%;
 }
 
 

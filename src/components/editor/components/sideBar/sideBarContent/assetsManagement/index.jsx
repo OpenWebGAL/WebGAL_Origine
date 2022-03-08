@@ -135,14 +135,14 @@ const AssetsManagement = () => {
             showDirContent.push(temp);
     }
 
-    return <div>
+    return <>
         {/*<div className={styles.title}>*/}
         {/*    素材管理*/}
         {/*</div>*/}
         {runtime.currentDir !== '' &&
             <div className={styles.currentDirShow}>
                 {runtime.currentDir}
-            < /div>}
+            </div>}
         {
             runtime.currentDir !== '' && <div className={styles.controlPanel}>
                 <div>
@@ -176,7 +176,7 @@ const AssetsManagement = () => {
         <div className={styles.dirButtonContainer}>
             {showDirContent}
         </div>
-    </div>
+    </>
 }
 
 export default AssetsManagement;

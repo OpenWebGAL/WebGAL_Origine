@@ -50,7 +50,7 @@ const GameConfig = () => {
         getGameConfig();
     }, [])
 
-    return <div>
+    return <div style={{width:'100%'}}>
         <div>
             <a style={{color: 'black', textDecoration: 'none'}}
                href={`${runtime.domain}/Games/${runtime.currentEditGame}`}

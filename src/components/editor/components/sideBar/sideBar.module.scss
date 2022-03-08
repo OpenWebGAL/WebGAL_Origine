@@ -2,10 +2,11 @@
   position: relative;
   width: 20vw;
   height: calc(100vh - 50px);
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   overflow: auto;
   //display: flex;
   //flex-flow: column;
+  box-shadow: 0 0 1px rgba(0,0,0,0.1);
 }
 
 .option {
@@ -13,15 +14,16 @@
   display: flex;
   justify-content: space-evenly;
   padding: 5px 0 5px 0;
-  margin: 5px 0 5px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0 0 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
 }
 
 .optionMarker {
   height: 4px;
   width: 30%;
   background-color: #8E354A;
-  margin: 3px 35% 3px 35%;
+  margin: 3px 35% 0 35%;
   border-radius: 30px;
 }
 
@@ -29,7 +31,7 @@
   height: 4px;
   width: 30%;
   background-color: rgba(0,0,0,0.15);
-  margin: 3px 35% 3px 35%;
+  margin: 3px 35% 0 35%;
   border-radius: 30px;
 }
 
@@ -62,8 +64,8 @@
   font-size: smaller;
   font-weight: bold;
   cursor: pointer;
-  padding: 5px 15px 5px 15px;
-  margin: 5px 5px 5px 5px;
+  padding: 5px 0 5px 0;
+  margin: 0 5px 0 5px;
 }
 
 .tagButtonOn{
@@ -71,8 +73,8 @@
   font-weight: bold;
   cursor: pointer;
   //border: 1px solid rgba(0,0,0,0.1);
-  padding: 5px 15px 5px 15px;
-  margin: 5px 5px 5px 5px;
+  padding: 5px 0 5px 0;
+  margin: 0 5px 0 5px;
   //border-radius: 7px;
   //box-shadow: 0 0 10px rgba(0,0,0,0.07) inset;
 }
@@ -82,4 +84,5 @@
   overflow: auto;
   padding: 5px 10px 5px 10px;
   display: flex;
+  width: 100%;
 }

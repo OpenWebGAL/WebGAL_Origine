@@ -60,7 +60,7 @@ const SceneManagement = () => {
     }
 
 
-    return <div>
+    return <div style={{width:'100%'}}>
         {/*<div className={styles.titleText}>*/}
         {/*    场景管理*/}
         {/*</div>*/}

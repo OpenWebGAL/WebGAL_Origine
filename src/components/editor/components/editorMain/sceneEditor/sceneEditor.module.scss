@@ -1,12 +1,14 @@
 .topButtonList{
+  padding: 0 0 0 20px;
   display: flex;
 }
 
 .topButton{
   padding: 5px 10px 5px 10px;
-  border: 2px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
   margin: 10px 5px 5px 5px;
-  border-radius: 5px;
+  // border-radius: 5px;
   //background-color: #8e354a;
   color: #8e354a;
   cursor: pointer;
@@ -43,11 +45,12 @@
 .sentenceList {
   overflow: auto;
   height: calc(100vh - 160px);
+  width: 100%;
 }
 
 .sentence{
   display: flex;
-  width: 78vw;
+  width: 100%;
   margin-top: 3px;
   animation: sentenceIn 0.5s;
 }
@@ -58,6 +61,8 @@
   padding: 0 5px 0 0;
   font-size: medium;
   font-weight: bold;
+  width: 15px;
+  text-align: left;
 }
 
 .sentenceMain{
