@@ -4,6 +4,7 @@ import store from "../../store/editorStore";
 import runtime from "../../controller/runtime";
 import {CloseSmall, PlayTwo, ViewGridList} from "@icon-park/react";
 import SceneEditor from "./sceneEditor";
+import recordScroll from "../functions/recordScroll";
 
 const EditorMain = () => {
     const [updateEditor, setUpdateEditor] = useState(false);
@@ -23,6 +24,8 @@ const EditorMain = () => {
     }, []);
 
     const switchTag = (tagName) => {
+        //如果当前打开了场景，记录当前滚动的位置
+        recordScroll();
         runtime.currentEditScene = tagName;
         store.set('updateEditor', !store.get('updateEditor'));
         store.set('refScene', !store.get('refScene'));
@@ -84,7 +87,7 @@ const EditorMain = () => {
             {showTags}
         </div>
         <div>
-            {runtime.currentEditScene !== '' && <SceneEditor sceneName={runtime.currentEditScene}/>}
+            {runtime.currentEditScene !== '' && <SceneEditor key={runtime.currentEditScene} sceneName={runtime.currentEditScene}/>}
         </div>
     </div>
 }

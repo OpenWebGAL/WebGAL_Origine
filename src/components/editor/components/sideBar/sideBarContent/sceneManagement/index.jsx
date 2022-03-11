@@ -5,6 +5,7 @@ import store from "../../../../store/editorStore";
 import AddScene from "./addScene";
 import styles from "./sceneManagement.module.scss";
 import {AddOne, PlayTwo} from "@icon-park/react";
+import recordScroll from "../../../functions/recordScroll";
 
 const SceneManagement = () => {
     const [sceneList, setSceneList] = useState([]);
@@ -38,6 +39,8 @@ const SceneManagement = () => {
         } else {
             runtime.currentOpendSceneEdit.push(sceneName);
         }
+        //如果当前打开了场景，记录当前滚动的位置
+        recordScroll();
         //改变当前编辑的Scene
         runtime.currentEditScene = sceneName;
         store.set('updateEditor', !store.get('updateEditor'));//通知编辑器更新到最新的环境;
