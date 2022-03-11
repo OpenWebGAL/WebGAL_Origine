@@ -9,7 +9,8 @@ const runtimeTemplate = {
     currentDirContent: [],
     currentEditScene: '',
     currentOpendSceneEdit: [],
-    currentSceneSentenceList: []
+    currentSceneSentenceList: [],
+    sceneScrollTop:{}
 }
 
 const runtime = JSON.parse(JSON.stringify(runtimeTemplate));
