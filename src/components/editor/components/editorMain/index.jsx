@@ -32,6 +32,8 @@ const EditorMain = () => {
     }
 
     const closeTag = (tagName) => {
+        //如果当前打开了场景，记录当前滚动的位置
+        recordScroll();
         //找到tag在列表中的index
         const tagIndex = runtime.currentOpendSceneEdit.indexOf(tagName);
         runtime.currentOpendSceneEdit.splice(tagIndex, 1);
