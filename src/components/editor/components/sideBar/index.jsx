@@ -24,18 +24,20 @@ const SideBar = () => {
         } else {
             optionMarker = <div className={styles.optionMarkerOff}/>;
         }
-        const temp = <div key={e} className={e=== runtime.editorTag?styles.tagButtonOn:styles.tagButton} onClick={() => {
-            runtime.editorTag = e;
-            store.set('refSideBar', !store.get('refSideBar'));
-        }}>
+        const temp = <div key={e}
+                          className={e === runtime.editorTag ? styles.tagButton + ' ' + styles.tagButtonOn : styles.tagButton}
+                          onClick={() => {
+                              runtime.editorTag = e;
+                              store.set('refSideBar', !store.get('refSideBar'));
+                          }}>
             <div>{e}</div>
-            {optionMarker}
+            {/*{optionMarker}*/}
         </div>
         showOption.push(temp);
     }
     //生成Content界面
     let sideBarConetnt;
-    switch (runtime.editorTag){
+    switch (runtime.editorTag) {
         case "游戏配置":
             sideBarConetnt = <GameConfig/>;
             break;

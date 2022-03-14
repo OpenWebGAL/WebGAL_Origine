@@ -6,17 +6,17 @@
   overflow: auto;
   //display: flex;
   //flex-flow: column;
-  box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .option {
   position: relative;
   display: flex;
   justify-content: space-evenly;
-  padding: 5px 0 5px 0;
+  padding: 0 10px 0 10px;
   margin: 0 0 0 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .optionMarker {
@@ -30,7 +30,7 @@
 .optionMarkerOff {
   height: 4px;
   width: 30%;
-  background-color: rgba(0,0,0,0.15);
+  background-color: rgba(0, 0, 0, 0.15);
   margin: 3px 35% 0 35%;
   border-radius: 30px;
 }
@@ -64,19 +64,22 @@
   font-size: smaller;
   font-weight: bold;
   cursor: pointer;
-  padding: 5px 0 5px 0;
+  padding: 10px 0 8px 0;
   margin: 0 5px 0 5px;
+  flex: 1;
+  text-align: center;
 }
 
-.tagButtonOn{
-  font-size: smaller;
-  font-weight: bold;
-  cursor: pointer;
-  //border: 1px solid rgba(0,0,0,0.1);
-  padding: 5px 0 5px 0;
-  margin: 0 5px 0 5px;
-  //border-radius: 7px;
-  //box-shadow: 0 0 10px rgba(0,0,0,0.07) inset;
+.tagButton:hover {
+  //background-color: rgba(254, 223, 225, 0.25);
+  border-bottom: 2px solid #8E354A;
+  color: #8e354a;
+}
+
+.tagButtonOn {
+  border-bottom: 2px solid #8E354A;
+  color: #8e354a;
+  background-color: rgba(254, 223, 225, 0.2);
 }
 
 .sideBarContent {
