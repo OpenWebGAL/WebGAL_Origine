@@ -87,16 +87,16 @@ const GameConfig = () => {
                 <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor('Title_img')}/>
             </div>
         </div>
-        <div>
-            <div className={styles.title}>
-                加载图
-            </div>
-            <div>
-                {loadImgName}
-                <ChooseFile setShow={setLoadImgName} id={'loadImgPicker'} dir={'background'}
-                            set={setConstructor('Loading_img')}/>
-            </div>
-        </div>
+        {/*<div>*/}
+        {/*    <div className={styles.title}>*/}
+        {/*        加载图*/}
+        {/*    </div>*/}
+        {/*    <div>*/}
+        {/*        {loadImgName}*/}
+        {/*        <ChooseFile setShow={setLoadImgName} id={'loadImgPicker'} dir={'background'}*/}
+        {/*                    set={setConstructor('Loading_img')}/>*/}
+        {/*    </div>*/}
+        {/*</div>*/}
     </div>
 }
 

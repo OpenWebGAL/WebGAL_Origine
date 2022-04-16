@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import store from "../../../store/editorStore";
 import runtime from "../../../controller/runtime";
 import axios from "axios";
-import {Avatar, Change, Comment, FileMusic, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
+import {Avatar, Change, Comment, FileMusic, ListView, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
 import createSentence from "./createSentence";
 import sentenceMap from "./sentenceMap";
 import 'antd/dist/antd.css';
@@ -88,6 +88,11 @@ const SceneEditor = (props) => {
             createNewSentence('video');
             setShowAdd(false);
         }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('intro');
+            setShowAdd(false);
+        }}><ListView theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>黑屏文字
         </div>
     </div>
 

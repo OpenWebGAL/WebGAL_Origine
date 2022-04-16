@@ -1,5 +1,5 @@
 import styles from './sceneEditor.module.scss'
-import {Avatar, Change, Comment, FileMusic, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
+import {Avatar, Change, Comment, FileMusic, ListView, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
 import {createNewSentence} from "./index";
 
 const AddSentenceByIndex = (props) => {
@@ -31,6 +31,10 @@ const AddSentenceByIndex = (props) => {
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('video',props.index)
         }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
+        </div>
+        <div className={styles.addSentenceButton} onClick={() => {
+            createNewSentence('intro',props.index)
+        }}><ListView theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>黑屏文字
         </div>
     </div>
 }

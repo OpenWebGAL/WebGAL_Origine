@@ -5,6 +5,7 @@ import ChangeScene from "./sentence/changeScene";
 import PlayVideo from "./sentence/playVideo";
 import ChangeP from "./sentence/changeP";
 import ChooseScene from "./sentence/chooseScene";
+import Intro from "./sentence/intro";
 
 const sentenceMap = (sentence, index) => {
     let temp;
@@ -29,6 +30,9 @@ const sentenceMap = (sentence, index) => {
             break;
         case 'choose':
             temp = <ChooseScene data={sentence} index={index} key={index}/>;
+            break;
+        case 'intro':
+            temp = <Intro data={sentence} index={index} key={index}/>;
             break;
     }
     return temp;

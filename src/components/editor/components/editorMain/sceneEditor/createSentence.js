@@ -61,6 +61,12 @@ const createSentence = (sentenceType) => {
                 ]
             }
             break;
+        case 'intro':
+            sentence = {
+                type: sentenceType,
+                content: []
+            }
+            break;
     }
 
     return sentence;
