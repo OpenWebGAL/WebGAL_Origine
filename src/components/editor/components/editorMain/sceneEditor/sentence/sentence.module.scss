@@ -13,7 +13,7 @@
 
 .dialog_input {
   font-size: small;
-  width: 500px;
+  flex: 1;
   outline-style: none;
   border: 0;
   border-bottom: 2px solid #8e354a;
@@ -59,7 +59,7 @@ $topHeight: 35px;
   font-weight: normal;
   cursor: pointer;
   position: relative;
-  $sentenceHeight: calc($topHeight - 1px);
+  $sentenceHeight: calc(35px - 1px);
   height: $sentenceHeight;
   line-height: $sentenceHeight;
 }
@@ -95,7 +95,7 @@ $blockBgColor: rgba(254, 223, 225, 0);
   border: $blockBorder;
   box-shadow: $blockShadow;
   background-color: $blockBgColor;
-  flex-grow:1;
+  flex-grow: 1;
   height: $topHeight;
 }
 

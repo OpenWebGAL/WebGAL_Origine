@@ -66,7 +66,7 @@ const SideBar = () => {
             <div className={styles.asidePreviewControlBar_single}>
                 <span style={{fontSize: 'large', fontWeight: 'bold', color: '#8E354A'}}>游戏预览</span>
             </div>
-            <div className={styles.asidePreviewControlBar_button} onClick={refreashIframe}>
+            <div id={'refPreviewButton'} className={styles.asidePreviewControlBar_button} onClick={refreashIframe}>
                 <Refresh style={{
                     transform: 'translate(0,0)', margin: '0 3px 0 0 '
                 }} theme="outline" size="16" fill="#000" strokeWidth={3}/>刷新

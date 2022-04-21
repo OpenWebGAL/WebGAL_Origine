@@ -7,6 +7,7 @@ import {Avatar, Change, Comment, FileMusic, ListView, Pic, SplitTurnDownRight, V
 import createSentence from "./createSentence";
 import sentenceMap from "./sentenceMap";
 import 'antd/dist/antd.css';
+import {eventSender} from "../../../../../util/eventSender";
 
 const SceneEditor = (props) => {
     const [updateScene, setUpdateScene] = useState(true);
@@ -31,10 +32,10 @@ const SceneEditor = (props) => {
         }, 'writeSceneFunc');
         updateSceneFromFile();
         if (runtime.sceneScrollTop.hasOwnProperty(runtime.currentEditScene)) {
-            const restoreScroll = ()=>{
+            const restoreScroll = () => {
                 document.getElementById('currentSentenceList').scrollTop = runtime.sceneScrollTop[runtime.currentEditScene];
             }
-            setTimeout(restoreScroll,0);
+            setTimeout(restoreScroll, 0);
         }
     }, []);
 
@@ -46,7 +47,7 @@ const SceneEditor = (props) => {
         const sentence = showSentenceGenerateArray[i];
         const temp = sentenceMap(sentence, i);
         //每一个语句的卡片
-        const t = <div key={'sentence'+i} className={styles.sentence}>
+        const t = <div key={'sentence' + i} className={styles.sentence}>
             <div className={styles.lineNumber}>{i + 1}</div>
             <div className={styles.sentenceMain}>{temp}</div>
         </div>
@@ -127,6 +128,9 @@ function updateSceneFromFile() {
     axios.get(url,).then(r => {
         runtime.currentSceneSentenceList = r.data;
         store.set('updateScene', !store.get('updateScene'));
+        if (runtime.isRealtimeRefreashPreview) {
+            eventSender('refPreviewButton', 0, 0);
+        }
     }).catch(e => console.log(e))
 }
 
