@@ -5,7 +5,7 @@ import store from "../../store/editorStore";
 import GameConfig from "./sideBarContent/gameConfig";
 import AssetsManagement from "./sideBarContent/assetsManagement";
 import SceneManagement from "./sideBarContent/sceneManagement";
-import {Refresh} from "@icon-park/react";
+import {FolderOpen, PlayTwo, Refresh, SettingConfig} from "@icon-park/react";
 import {Switch} from 'antd';
 
 const SideBar = () => {
@@ -21,10 +21,19 @@ const SideBar = () => {
     //生成选择侧边栏Tag的界面
     for (const e of sideBarItem) {
         let optionMarker;
+        let fill = '#333';
         if (e === runtime.editorTag) {
             optionMarker = <div className={styles.optionMarker}/>;
+            fill = '#8e354a';
         } else {
             optionMarker = <div className={styles.optionMarkerOff}/>;
+        }
+        let icon = <SettingConfig theme="outline" size="14" fill={fill}/>;
+        if (e === '素材管理') {
+            icon = <FolderOpen theme="outline" size="14" fill={fill}/>
+        }
+        if (e === '场景管理') {
+            icon = <PlayTwo theme="outline" size="14" fill={fill}/>
         }
         const temp = <div key={e}
                           className={e === runtime.editorTag ? styles.tagButton + ' ' + styles.tagButtonOn : styles.tagButton}
@@ -32,7 +41,10 @@ const SideBar = () => {
                               runtime.editorTag = e;
                               store.set('refSideBar', !store.get('refSideBar'));
                           }}>
-            <div>{e}</div>
+            <div>
+                {icon}<span style={{margin: '0 5px 0 0 '}}/>
+                {e}
+            </div>
             {/*{optionMarker}*/}
         </div>
         showOption.push(temp);

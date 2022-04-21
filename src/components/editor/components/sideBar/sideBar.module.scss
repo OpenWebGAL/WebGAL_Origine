@@ -1,11 +1,11 @@
 .aside {
   position: relative;
-  width: 45vw;
+  width: 40vw;
   height: 100%;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   //display: flex;
   //flex-flow: column;
-  //box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  //box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   display: flex;
   flex-flow: column;
@@ -16,11 +16,13 @@
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  padding: 0 10px 0 10px;
+  //padding: 0 10px 0 10px;
   margin: 0 0 0 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  width: 30%;
+  //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  //box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  width: 25%;
+  //background: linear-gradient(135deg, #ebedee 0%, #fdfbfb 100%);
+  border-right: 1px solid rgba(0,0,0,0.1);
 }
 
 .optionMarker {
@@ -65,33 +67,37 @@
 }
 
 .tagButton {
-  font-size: smaller;
+  //font-size: smaller;
   font-weight: bold;
   cursor: pointer;
   padding: 10px 0 8px 0;
-  margin: 0 5px 0 5px;
+  margin: 0 0 0 0;
   text-align: center;
-  border-left: 2px solid rgba(0,0,0,0);
+  border-left: 3px solid rgba(0,0,0,0);
+  //border-radius: 5px 0 0 5px;
 }
 
 .tagButton:hover {
   //background-color: rgba(254, 223, 225, 0.25);
   //border-left: 2px solid #8E354A;
-  color: #8e354a;
+  //color: #8e354a;
+  background: rgba(0,0,0,0.05);
+  //background-color: rgba(254, 223, 225, 0.2);
 }
 
 .tagButtonOn {
-  border-left: 2px solid #8E354A;
+  border-left: 3px solid #8E354A;
   color: #8e354a;
-  background-color: rgba(254, 223, 225, 0.2);
+  //background: rgba(0,0,0,0.05);
+  //background-color: rgba(254, 223, 225, 0.2);
 }
 
 .sideBarContent {
   position: relative;
   overflow: auto;
-  padding: 5px 10px 5px 10px;
+  padding: 10px 15px 5px 15px;
   //display: flex;
-  width: 70%;
+  width: 75%;
 }
 
 .previewWindow {
@@ -100,9 +106,9 @@
 }
 
 .sideBarMain {
-  margin: 5px 0 0 0 ;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  padding: 5px 0 0 0 ;
+  margin: 5px 0 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 0 0 0;
   display: flex;
   height: 50%;
   min-height: 50%;
@@ -112,7 +118,7 @@
   box-sizing: border-box;
   display: flex;
   flex-flow: row;
-  margin: 0 0 2px 0 ;
+  margin: 0 0 2px 0;
   padding: 5px 15px 5px 15px;
 }
 
@@ -120,16 +126,16 @@
   cursor: pointer;
   margin: 0 10px 0 0;
   line-height: 30px;
-  border-radius: 5px;
-  border: 1px solid rgba(0,0,0,0.1);
+  //border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0 10px 0 10px;
 }
 
-.asidePreviewControlBar_button:hover{
-  background: rgba(0,0,0,0.1);
+.asidePreviewControlBar_button:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
-.asidePreviewControlBar_single{
+.asidePreviewControlBar_single {
   margin: 0 10px 0 0;
   height: 30px;
   line-height: 30px;

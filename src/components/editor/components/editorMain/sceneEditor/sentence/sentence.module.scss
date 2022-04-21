@@ -12,11 +12,12 @@
 
 
 .dialog_input {
-  font-size: small;
+  //font-size: small;
   flex: 1;
   outline-style: none;
-  border: 0;
-  border-bottom: 2px solid #8e354a;
+  //border: 0;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
 }
 
 .singleOption {
@@ -31,8 +32,13 @@
   color: #8e354a;
   font-weight: bold;
   margin: 0 5px 0 0;
-  border-bottom: 2px solid #8e354a;
+  //border-bottom: 2px solid #8e354a;
   padding: 3px 5px 3px 5px;
+}
+
+.dialog_edit_title{
+  color: #8e354a;
+  font-weight: bold;
 }
 
 .optionContent {

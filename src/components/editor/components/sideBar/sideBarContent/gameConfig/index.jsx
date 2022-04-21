@@ -56,7 +56,7 @@ const GameConfig = () => {
                href={`${runtime.domain}/Games/${runtime.currentEditGame}`}
                target="_blank">
                 <div className={styles.previewGameButton}>
-                    <PlayOne theme="outline" size="28" fill="#FFF" style={{padding: '0 5px 0 0', transform: 'translate(0,5px)'}}/>
+                    <PlayOne theme="outline" size="24" fill="#FFF" style={{padding: '0 5px 0 0', transform: 'translate(0,5px)'}}/>
                     在新标签页预览游戏
                 </div>
             </a>

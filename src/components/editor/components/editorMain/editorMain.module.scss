@@ -1,8 +1,8 @@
 .main {
-  width: 55vw;
+  width: 60vw;
   height: 100%;
   box-sizing: border-box;
-  padding: 2px 10px 2px 10px;
+  padding: 0 0 0 0;
 }
 
 .tag {
@@ -24,6 +24,9 @@
 
 .tagList {
   display: flex;
+  //border-bottom: rgba(0, 0, 0, 1);
+  //box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 .tagIcon {
@@ -31,12 +34,12 @@
   transform: translate(0, 3px);
 }
 
-.closeIcon{
+.closeIcon {
   padding: 5px 5px 5px 3px;
   transform: translate(0, 3px);
   border-radius: 100px;
 }
 
-.closeIcon:hover{
-  background-color: rgba(0,0,0,0.1);
+.closeIcon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }

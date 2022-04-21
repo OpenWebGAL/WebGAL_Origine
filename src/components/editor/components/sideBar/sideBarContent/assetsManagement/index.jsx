@@ -135,7 +135,7 @@ const AssetsManagement = () => {
             showDirContent.push(temp);
     }
 
-    return <>
+    return <div className={styles.main}>
         {/*<div className={styles.title}>*/}
         {/*    素材管理*/}
         {/*</div>*/}
@@ -176,7 +176,7 @@ const AssetsManagement = () => {
         <div className={styles.dirButtonContainer}>
             {showDirContent}
         </div>
-    </>
+    </div>
 }
 
 export default AssetsManagement;
