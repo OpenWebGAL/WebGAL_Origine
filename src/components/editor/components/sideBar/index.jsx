@@ -5,6 +5,8 @@ import store from "../../store/editorStore";
 import GameConfig from "./sideBarContent/gameConfig";
 import AssetsManagement from "./sideBarContent/assetsManagement";
 import SceneManagement from "./sideBarContent/sceneManagement";
+import {Refresh} from "@icon-park/react";
+import {Switch} from 'antd';
 
 const SideBar = () => {
     const sideBarItem = ['游戏配置', '素材管理', '场景管理'];
@@ -49,13 +51,40 @@ const SideBar = () => {
             break;
     }
 
+    function onRPFchange(checked) {
+        runtime.isRealtimeRefreashPreview = checked;
+    }
+
+    function refreashIframe() {
+        const frame1 = document.getElementById('gamePreviewIframe');
+        frame1.src = '';
+        frame1.src = `${runtime.domain}/Games/${runtime.currentEditGame}`;
+    }
 
     return <aside className={styles.aside}>
-        <div className={styles.option}>
-            {showOption}
+        <div className={styles.asidePreviewControlBar}>
+            <div className={styles.asidePreviewControlBar_single}>
+                <span style={{fontSize: 'large', fontWeight: 'bold', color: '#8E354A'}}>游戏预览</span>
+            </div>
+            <div className={styles.asidePreviewControlBar_button} onClick={refreashIframe}>
+                <Refresh style={{
+                    transform: 'translate(0,0)', margin: '0 3px 0 0 '
+                }} theme="outline" size="16" fill="#000" strokeWidth={3}/>刷新
+            </div>
+            <div className={styles.asidePreviewControlBar_single}>
+                实时更新<span style={{margin: '0 10px 0 0 '}}/>
+                <Switch defaultChecked onChange={onRPFchange} size={'small'}/>
+            </div>
         </div>
-        <div className={styles.sideBarContent}>
-            {sideBarConetnt}
+        <iframe id={'gamePreviewIframe'} frameBorder={'0'} className={styles.previewWindow}
+                src={`${runtime.domain}/Games/${runtime.currentEditGame}`}/>
+        <div className={styles.sideBarMain}>
+            <div className={styles.option}>
+                {showOption}
+            </div>
+            <div className={styles.sideBarContent}>
+                {sideBarConetnt}
+            </div>
         </div>
     </aside>
 }

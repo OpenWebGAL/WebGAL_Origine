@@ -1,7 +1,7 @@
 const runtimeTemplate = {
     editorTag: '游戏配置',
-    // domain: 'http://localhost:3001',
-    domain:'',
+    domain: 'http://localhost:3001',
+    // domain:'',
     gameList: [],
     currentEditGame: '',
     currentGameConfig: {},
@@ -10,7 +10,8 @@ const runtimeTemplate = {
     currentEditScene: '',
     currentOpendSceneEdit: [],
     currentSceneSentenceList: [],
-    sceneScrollTop:{}
+    sceneScrollTop:{},
+    isRealtimeRefreashPreview:true,
 }
 
 const runtime = JSON.parse(JSON.stringify(runtimeTemplate));
