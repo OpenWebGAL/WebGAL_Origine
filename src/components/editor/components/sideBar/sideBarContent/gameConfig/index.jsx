@@ -50,13 +50,14 @@ const GameConfig = () => {
         getGameConfig();
     }, [])
 
-    return <div style={{width:'100%'}}>
+    return <div style={{width: '100%'}}>
         <div>
             <a style={{color: 'black', textDecoration: 'none'}}
                href={`${runtime.domain}/Games/${runtime.currentEditGame}`}
                target="_blank">
                 <div className={styles.previewGameButton}>
-                    <PlayOne theme="outline" size="24" fill="#FFF" style={{padding: '0 5px 0 0', transform: 'translate(0,5px)'}}/>
+                    <PlayOne theme="outline" size="24" fill="#FFF"
+                             style={{padding: '0 5px 0 0', transform: 'translate(0,5px)'}}/>
                     在新标签页预览游戏
                 </div>
             </a>
@@ -65,7 +66,7 @@ const GameConfig = () => {
             <div className={styles.title}>
                 游戏名称
             </div>
-            <div>
+            <div className={styles.optionContent}>
                 <input onBlur={setGameName} id={"gameNameInput"} className={styles.gameNameInput}/>
             </div>
         </div>
@@ -73,7 +74,7 @@ const GameConfig = () => {
             <div className={styles.title}>
                 标题背景音乐
             </div>
-            <div>
+            <div className={styles.optionContent}>
                 {bgmName}
                 <ChooseFile setShow={setBgmName} id={'bgmPicker'} dir={'bgm'} set={setConstructor('Title_bgm')}/>
             </div>
@@ -82,7 +83,7 @@ const GameConfig = () => {
             <div className={styles.title}>
                 标题背景
             </div>
-            <div>
+            <div className={styles.optionContent}>
                 {bgName}
                 <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor('Title_img')}/>
             </div>

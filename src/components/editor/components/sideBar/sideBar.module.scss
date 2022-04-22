@@ -20,9 +20,9 @@
   margin: 0 0 0 0;
   //border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   //box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  width: 25%;
+  width: 30%;
   //background: linear-gradient(135deg, #ebedee 0%, #fdfbfb 100%);
-  border-right: 1px solid rgba(0,0,0,0.1);
+  //border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .optionMarker {
@@ -67,37 +67,41 @@
 }
 
 .tagButton {
+  color: #434343;
   //font-size: smaller;
   font-weight: bold;
   cursor: pointer;
   padding: 10px 0 8px 0;
-  margin: 0 0 0 0;
+  margin: 3px 10px 3px 10px;
   text-align: center;
-  border-left: 3px solid rgba(0,0,0,0);
+  //border-left: 3px solid rgba(0,0,0,0);
   //border-radius: 5px 0 0 5px;
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .tagButton:hover {
-  //background-color: rgba(254, 223, 225, 0.25);
-  //border-left: 2px solid #8E354A;
-  //color: #8e354a;
-  background: rgba(0,0,0,0.05);
-  //background-color: rgba(254, 223, 225, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .tagButtonOn {
-  border-left: 3px solid #8E354A;
+  //border-left: 3px solid #8E354A;
   color: #8e354a;
   //background: rgba(0,0,0,0.05);
   //background-color: rgba(254, 223, 225, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sideBarContent {
   position: relative;
   overflow: auto;
-  padding: 10px 15px 5px 15px;
+  padding: 5px 15px 5px 15px;
   //display: flex;
-  width: 75%;
+  width: 70%;
 }
 
 .previewWindow {
@@ -118,21 +122,31 @@
   box-sizing: border-box;
   display: flex;
   flex-flow: row;
-  margin: 0 0 2px 0;
+  margin: 5px 0 5px 5px;
   padding: 5px 15px 5px 15px;
+  align-items: center;
+}
+
+.gamePrevTitle {
+  display: inline-block;
+  font-size: x-large;
+  font-weight: bold;
+  color: #8E354A;
+  transform: translate(0, -2px);
 }
 
 .asidePreviewControlBar_button {
   cursor: pointer;
-  margin: 0 10px 0 0;
-  line-height: 30px;
-  //border-radius: 5px;
+  margin: 0 15px 0 10px;
+  border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0 10px 0 10px;
+  padding: 3px 7px 3px 7px;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .asidePreviewControlBar_button:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .asidePreviewControlBar_single {

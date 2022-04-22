@@ -1,5 +1,5 @@
-.title{
-  //font-size: large;
+.title {
+  font-size: large;
   color: #8e354a;
   margin: 10px 0 5px 0;
   padding: 5px 5px 2px 5px;
@@ -7,27 +7,32 @@
   font-weight: bold;
 }
 
-.previewGameButton{
+.previewGameButton {
   color: white;
-  background-color: #D05A6E;
-  padding: 0 5px 4px 5px;
+  background-color: #8e354a;
+  padding: 0 5px 6px 5px;
   margin: 5px 0 5px 0;
-  border: 2px solid #8e354a;
-  //border-radius: 7px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  //border: 2px solid #8e354a;
+  border-radius: 4px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   //font-size: larger;
 }
 
-.gameNameInput{
-  outline-style: none ;
+.gameNameInput {
+  outline-style: none;
   //font-size: ;
-  border: 1px solid #8e354a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: #8e354a;
   padding: 5px 10px 5px 10px;
   border-radius: 4px;
   width: 100%;
 }
 
-.gameNameInput:focus{
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+.gameNameInput:focus {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.optionContent {
+  padding: 0 5px 0 5px;
+  display: flex;
 }
