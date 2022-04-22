@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import store from "../../../store/editorStore";
 import runtime from "../../../controller/runtime";
 import axios from "axios";
-import {Avatar, Change, Comment, FileMusic, ListView, Pic, SplitTurnDownRight, Video} from "@icon-park/react";
+import {Avatar, Change, Comment, FileMusic, ListView, Pic, Plus, SplitTurnDownRight, Video} from "@icon-park/react";
 import createSentence from "./createSentence";
 import sentenceMap from "./sentenceMap";
 import 'antd/dist/antd.css';
@@ -54,57 +54,61 @@ const SceneEditor = (props) => {
         showSentenceList.push(t);
     }
 
-    const showAddSentence = <div className={styles.addSentencePanel}>
+    const showAddSentence = <div className={styles.addSentencePanel_main}>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('dialog');
             setShowAdd(false);
-        }}><Comment theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>添加对话
+        }}><Comment className={styles.addItemIcon} theme="outline" size='18' fill="#333"
+                    style={{padding: '0 5px 0 0'}}/>添加对话
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('changeP');
             setShowAdd(false);
-        }}><Avatar theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
+        }}><Avatar className={styles.addItemIcon} theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换立绘
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('bg');
             setShowAdd(false);
-        }}><Pic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
+        }}><Pic className={styles.addItemIcon} theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>切换背景
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('changeScene');
             setShowAdd(false);
-        }}><Change theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
+        }}><Change className={styles.addItemIcon} theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>场景跳转
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('choose');
             setShowAdd(false);
-        }}><SplitTurnDownRight theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>分支选择
+        }}><SplitTurnDownRight className={styles.addItemIcon} theme="outline" size='18' fill="#333"
+                               style={{padding: '0 5px 0 0'}}/>分支选择
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('bgm');
             setShowAdd(false);
-        }}><FileMusic theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>背景音乐
+        }}><FileMusic className={styles.addItemIcon} theme="outline" size='18' fill="#333"
+                      style={{padding: '0 5px 0 0'}}/>背景音乐
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('video');
             setShowAdd(false);
-        }}><Video theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
+        }}><Video className={styles.addItemIcon} theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>插入视频
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
             createNewSentence('intro');
             setShowAdd(false);
-        }}><ListView theme="outline" size='18' fill="#333" style={{padding: '0 5px 0 0'}}/>黑屏文字
+        }}><ListView className={styles.addItemIcon} theme="outline" size='18' fill="#333"
+                     style={{padding: '0 5px 0 0'}}/>黑屏文字
         </div>
     </div>
 
 
-    return <div>
+    return <div className={styles.main}>
         <div className={styles.topButtonList}>
-            <div className={styles.topButton} onClick={writeSence}>保存场景</div>
+            {/*<div className={styles.topButton} onClick={writeSence}>保存场景</div>*/}
             <div className={styles.topButton} onClick={() => {
                 setShowAdd(!showAdd);
             }}>
-                添加语句
+                <Plus theme="outline" size="24" fill="#fff"/>
             </div>
             <div>{showAdd && showAddSentence}</div>
         </div>

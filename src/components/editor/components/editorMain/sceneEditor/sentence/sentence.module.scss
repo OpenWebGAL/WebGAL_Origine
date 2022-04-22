@@ -10,13 +10,12 @@
   //box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-
 .dialog_input {
   //font-size: small;
   flex: 1;
   outline-style: none;
   //border: 0;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
 
@@ -29,15 +28,15 @@
 }
 
 .optionTitle {
-  color: #8e354a;
+  color: #434343;
   font-weight: bold;
   margin: 0 5px 0 0;
   //border-bottom: 2px solid #8e354a;
-  padding: 3px 5px 3px 5px;
+  padding: 3px 5px 3px 0;
 }
 
-.dialog_edit_title{
-  color: #8e354a;
+.dialog_edit_title {
+  color: #434343;
   font-weight: bold;
 }
 
@@ -52,12 +51,13 @@
 
 .sentenceButtonList {
   display: flex;
+  line-height: 0;
 }
 
 $topHeight: 35px;
 .sentenceButton {
   font-size: small;
-  padding: 0 7px 0 7px;
+  padding: 5px 7px 5px 7px;
   //border: 1px solid rgba(0,0,0,0.2);
   //border-radius: 5px;
   color: black;
@@ -66,23 +66,26 @@ $topHeight: 35px;
   cursor: pointer;
   position: relative;
   $sentenceHeight: calc(35px - 1px);
-  height: $sentenceHeight;
-  line-height: $sentenceHeight;
+  //height: $sentenceHeight;
+  //line-height: $sentenceHeight;
+  //border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  //box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .sentenceButton:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-$blockBorder: 1px solid rgba(0, 0, 0, 0.15);
-$blockShadow: 3px 3px 7px rgba(0, 0, 0, 0.05);
+$blockBorder: 1px solid rgba(0, 0, 0, 0);
+$blockShadow: 3px 3px 7px rgba(0, 0, 0, 0);
 $blockBgColor: rgba(254, 223, 225, 0);
 
 
 .sentenceIndexShow {
   display: flex;
   color: #8e354a;
-  font-size: small;
+  //font-size: small;
   font-weight: bold;
   padding: 0 10px 0 10px;
   margin: 0 5px 0 0;
@@ -92,6 +95,7 @@ $blockBgColor: rgba(254, 223, 225, 0);
   background-color: $blockBgColor;
   height: $topHeight;
   line-height: $topHeight;
+  transform: translate(0, -1px);
 }
 
 .barContainer {
@@ -102,7 +106,9 @@ $blockBgColor: rgba(254, 223, 225, 0);
   box-shadow: $blockShadow;
   background-color: $blockBgColor;
   flex-grow: 1;
-  height: $topHeight;
+  //height: $topHeight;
+  align-items: center;
+  display: flex;
 }
 
 .mainEdit {
@@ -119,7 +125,7 @@ $blockBgColor: rgba(254, 223, 225, 0);
   padding: 3px 0 3px 5px;
   //border: 1px solid rgba(0,0,0,0.15);
   //box-shadow: 1px 1px 5px rgba(0,0,0,0.15) ;
-  height: $topHeight;
+  //height: $topHeight;
   margin: 0 0 7px 0;
 }
 

@@ -74,7 +74,7 @@ const EditorMain = () => {
             }}>
                 <PlayTwo theme="outline" size="20" fill="#333" className={styles.tagIcon}/>
                 {e}
-                <CloseSmall theme="outline" size="20" fill="#333" className={styles.tagIcon} onClick={(event) => {
+                <CloseSmall theme="outline" size="20" fill="#333" className={styles.closeIcon} onClick={(event) => {
                     event.preventDefault();
                     event.stopPropagation();
                     closeTag(e)
