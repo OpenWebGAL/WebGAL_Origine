@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import store from "../editor/store/editorStore";
 import runtime, {runtimeTemplate} from "../editor/controller/runtime";
 import axios from "axios";
-import {AddOne, GameTwo} from "@icon-park/react";
+import {Add, AddOne, GameTwo, Plus} from "@icon-park/react";
 
 const Management = () => {
     const [ref, setRef] = useState(true);
@@ -37,7 +37,7 @@ const Management = () => {
             store.set('isManagement', false);
         }
         }>
-            <GameTwo theme="outline" size="24" fill="#333" className={styles.buttonIcon}/>
+            <GameTwo theme="outline" size="18" fill="#333" className={styles.buttonIcon}/>
             {e}
         </div>
         showGameList.push(temp);
@@ -55,31 +55,35 @@ const Management = () => {
         <header>
             <nav>
                 <div className={styles.nav}>
-                    <div className={styles.title}>
-                        WebGAL ORIGINE
+                    <div>
+                        <span className={styles.title}>WebGAL ORIGINE</span>
                     </div>
                 </div>
             </nav>
         </header>
         <main className={styles.main}>
             <div className={styles.subTitle}>
-                游戏列表
-                <span onClick={() => setShowCreatePanel(!showCreatePanel)} className={styles.addIcon}><AddOne
-                    theme="outline" size="18" fill="#8E354A"/> 新建游戏</span>
-                {showCreatePanel && <div className={styles.createPanel}>
-                    <div className={styles.createPanelTitle}>
-                        创建游戏
-                    </div>
-                    <div>
-                        游戏名称：<input id={'createInput'} className={styles.createPanelInput}/>
-                    </div>
-                    <div style={{textAlign: 'center'}}>
-                        <div onClick={() => creatGame(document.getElementById('createInput').value)}
-                             className={styles.createButton}>
-                            创建
+                <span className={styles.addTitle}>游戏列表</span>
+                <div>
+                    <span onClick={() => setShowCreatePanel(!showCreatePanel)} className={styles.addIcon}>
+                    <Plus theme="outline" size="16" fill="#434343" style={{padding: '0 5px 0 0 '}}/>
+                    新建游戏
+                </span>
+                    {showCreatePanel && <div className={styles.createPanel}>
+                        <div className={styles.createPanelTitle}>
+                            创建游戏
                         </div>
-                    </div>
-                </div>}
+                        <div>
+                            游戏名称<input id={'createInput'} className={styles.createPanelInput}/>
+                        </div>
+                        <div style={{textAlign: 'center'}}>
+                            <div onClick={() => creatGame(document.getElementById('createInput').value)}
+                                 className={styles.createButton}>
+                                创建
+                            </div>
+                        </div>
+                    </div>}
+                </div>
             </div>
             <div className={styles.gameList}>
                 {showGameList}
