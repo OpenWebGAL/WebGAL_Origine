@@ -5,8 +5,10 @@ import styles from './sentence.module.scss'
 import ControlPanel from "./controlPanel";
 import ChooseFile from "../../../chooseFile";
 import { AddFour, DoubleRight } from "@icon-park/react";
+import {sendWsSync} from "../../../../../../util/sendWsSync";
 
 const ChooseScene = (props) => {
+    const sync = () => sendWsSync(props.index);
     const [showAddPre, setShowAddPre] = useState(false);
     const [showAddAfter, setShowAddAfter] = useState(false);
 
@@ -29,6 +31,7 @@ const ChooseScene = (props) => {
             scene: '',
         });
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const updateText = (id) => {
@@ -36,12 +39,14 @@ const ChooseScene = (props) => {
         console.log(updateIndex);
         runtime.currentSceneSentenceList[props.index].chooseItem[updateIndex].text = document.getElementById(id).value;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const setConstructor = (index) => {
         return (value) => {
             runtime.currentSceneSentenceList[props.index].chooseItem[index].scene = value;
             store.set('writeScene', !store.get('writeScene'));
+            sync();
         }
     }
 

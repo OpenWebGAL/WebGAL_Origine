@@ -4,6 +4,7 @@ import TopBar from "./components/topBar";
 import SideBar from "./components/sideBar";
 import styles from './editor.module.scss'
 import EditorMain from "./components/editorMain";
+import runtime from "./controller/runtime";
 
 const Editor = () => {
     const [editorStatus, setEditorStatus] = useState(true);
@@ -12,6 +13,22 @@ const Editor = () => {
         store.connect('updateEditor', () => {
             setEditorStatus(store.get('updateEditor'))
         }, 'ForceUpdateEditor');
+        try {
+            const loc = window.location.hostname;
+            const wsUrl = `ws://${loc}:9999`;
+            console.log('正在启动socket连接位于：' + wsUrl);
+            const socket = new WebSocket(wsUrl);
+            socket.onopen = () => {
+                console.log('socket已连接');
+                socket.send('WebGAL Origine 已和 Terre 建立连接');
+            };
+            socket.onmessage = e => {
+                console.log('收到信息', e.data);
+            };
+            runtime.wsConn = socket;
+        } catch (e) {
+            console.warn('ws连接失败');
+        }
     }, [])
     return <div>
         <TopBar/>

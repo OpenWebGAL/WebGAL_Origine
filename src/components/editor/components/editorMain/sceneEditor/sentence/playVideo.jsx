@@ -5,8 +5,10 @@ import styles from './sentence.module.scss'
 import ControlPanel from "./controlPanel";
 import { Switch } from "antd";
 import ChooseFile from "../../../chooseFile";
+import {sendWsSync} from "../../../../../../util/sendWsSync";
 
 const PlayVideo = (props) => {
+    const sync = () => sendWsSync(props.index);
     const [showAddPre, setShowAddPre] = useState(false);
     const [showAddAfter, setShowAddAfter] = useState(false);
 
@@ -26,6 +28,7 @@ const PlayVideo = (props) => {
         return (value) => {
             runtime.currentSceneSentenceList[props.index].video = value;
             store.set('writeScene', !store.get('writeScene'));
+            sync();
         }
     }
 

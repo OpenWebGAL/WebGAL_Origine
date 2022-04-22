@@ -12,6 +12,7 @@ const runtimeTemplate = {
     currentSceneSentenceList: [],
     sceneScrollTop:{},
     isRealtimeRefreashPreview:true,
+    wsConn:null,
 }
 
 const runtime = JSON.parse(JSON.stringify(runtimeTemplate));

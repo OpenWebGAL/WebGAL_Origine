@@ -128,9 +128,9 @@ function updateSceneFromFile() {
     axios.get(url,).then(r => {
         runtime.currentSceneSentenceList = r.data;
         store.set('updateScene', !store.get('updateScene'));
-        if (runtime.isRealtimeRefreashPreview) {
-            eventSender('refPreviewButton', 0, 0);
-        }
+        // if (runtime.isRealtimeRefreashPreview) {
+        //     eventSender('refPreviewButton', 0, 0);
+        // }
     }).catch(e => console.log(e))
 }
 

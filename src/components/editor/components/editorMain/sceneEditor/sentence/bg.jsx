@@ -5,8 +5,10 @@ import styles from './sentence.module.scss'
 import ControlPanel from "./controlPanel";
 import { Switch } from "antd";
 import ChooseFile from "../../../chooseFile";
+import {sendWsSync} from "../../../../../../util/sendWsSync";
 
 const Bg = (props) => {
+    const sync = () => sendWsSync(props.index);
     const [showAddPre, setShowAddPre] = useState(false);
     const [showAddAfter, setShowAddAfter] = useState(false);
 
@@ -32,11 +34,13 @@ const Bg = (props) => {
     const bgCheckBoxNo = (checked) => {
         runtime.currentSceneSentenceList[props.index].noBg = checked;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const bgCheckBoxNext = (checked) => {
         runtime.currentSceneSentenceList[props.index].next = checked;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const [bgName, setBgName] = useState(props.data.bg);
@@ -45,6 +49,7 @@ const Bg = (props) => {
         return (value) => {
             runtime.currentSceneSentenceList[props.index].bg = value;
             store.set('writeScene', !store.get('writeScene'));
+            sync();
         }
     }
 

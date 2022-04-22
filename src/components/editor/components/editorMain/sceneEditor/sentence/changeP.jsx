@@ -6,10 +6,12 @@ import ControlPanel from "./controlPanel";
 import {Switch} from "antd";
 import ChooseFile from "../../../chooseFile";
 import {Select} from 'antd';
+import {sendWsSync} from "../../../../../../util/sendWsSync";
 
 const {Option} = Select;
 
 const ChangeP = (props) => {
+    const sync = () => sendWsSync(props.index);
     const [showAddPre, setShowAddPre] = useState(false);
     const [showAddAfter, setShowAddAfter] = useState(false);
 
@@ -30,11 +32,13 @@ const ChangeP = (props) => {
     const changePnoneCheckBoxUpdate = (checked) => {
         runtime.currentSceneSentenceList[props.index].noP = checked;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const changePnextCheckBoxUpdate = (checked) => {
         runtime.currentSceneSentenceList[props.index].next = checked;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const [pName, setPName] = useState(props.data.newP);
@@ -43,12 +47,14 @@ const ChangeP = (props) => {
         return (value) => {
             runtime.currentSceneSentenceList[props.index].newP = value;
             store.set('writeScene', !store.get('writeScene'));
+            sync();
         }
     }
 
     const changeP_pos = (value) => {
         runtime.currentSceneSentenceList[props.index].pos = value;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     //语句编辑的UI

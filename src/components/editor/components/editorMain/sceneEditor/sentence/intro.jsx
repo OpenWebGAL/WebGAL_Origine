@@ -6,8 +6,10 @@ import ControlPanel from "./controlPanel";
 import { Switch } from "antd";
 import ChooseFile from "../../../chooseFile";
 import {AddFour, DoubleRight} from "@icon-park/react";
+import {sendWsSync} from "../../../../../../util/sendWsSync";
 
 const Intro = (props) => {
+    const sync = () => sendWsSync(props.index);
     const [showAddPre, setShowAddPre] = useState(false);
     const [showAddAfter, setShowAddAfter] = useState(false);
 
@@ -27,6 +29,7 @@ const Intro = (props) => {
     const addIntroItem = () => {
         runtime.currentSceneSentenceList[props.index].content.push('在此填入要展示的文字');
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     const updateText = (id) => {
@@ -34,6 +37,7 @@ const Intro = (props) => {
         console.log(updateIndex);
         runtime.currentSceneSentenceList[props.index].content[updateIndex] = document.getElementById(id).value;
         store.set('writeScene', !store.get('writeScene'));
+        sync();
     }
 
     //构造intro的文字列表
