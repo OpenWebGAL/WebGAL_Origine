@@ -15,7 +15,7 @@ const AddScene = (props) => {
 
     return <div className={styles.main}>
         <div className={styles.title}>
-            场景名称：<input className={styles.addInput} id={'addSceneName'}/>
+            场景名称<input className={styles.addInput} id={'addSceneName'}/>
         </div>
         <div className={styles.addButton} onClick={add}>新建场景</div>
     </div>

@@ -71,6 +71,8 @@ $topHeight: 35px;
   //border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   //box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
+  //border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .sentenceButton:hover {
@@ -126,6 +128,6 @@ $blockBgColor: rgba(254, 223, 225, 0);
   //border: 1px solid rgba(0,0,0,0.15);
   //box-shadow: 1px 1px 5px rgba(0,0,0,0.15) ;
   //height: $topHeight;
-  margin: 0 0 7px 0;
+  margin: 0 0 2px 0;
 }
 
