@@ -6,17 +6,18 @@
 }
 
 .tag {
-  padding: 3px 3px 3px 0;
+  padding: 1px 1px 3px 6px;
   margin: 0 0 0 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .tag:hover {
-  background-color: rgba(245, 246, 247, 1);
+  background-color: rgb(235, 236, 237);
 }
 
 .tagOpened {
-  padding: 3px 3px 3px 0;
+  padding: 1px 1px 3px 6px;
   margin: 0 0 0 5px;
   border-bottom: 2px solid #8e354a;
   cursor: pointer;
@@ -24,7 +25,7 @@
 
 .tagList {
   display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   //box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   padding: 0 0 0 5px;
