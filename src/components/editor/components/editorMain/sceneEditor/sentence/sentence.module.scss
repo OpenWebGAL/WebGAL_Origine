@@ -52,6 +52,7 @@
 .sentenceButtonList {
   display: flex;
   line-height: 0;
+  flex-wrap: wrap;
 }
 
 $topHeight: 35px;
@@ -100,6 +101,7 @@ $blockBgColor: rgba(254, 223, 225, 0);
   height: $topHeight;
   line-height: $topHeight;
   transform: translate(0, -1px);
+  flex-shrink: 0;
 }
 
 .barContainer {
