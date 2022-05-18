@@ -43,7 +43,7 @@ const Bg = (props) => {
         sync();
     }
 
-    const [bgName, setBgName] = useState(props.data.bg);
+    // const [bgName, setBgName] = useState(props.data.bg);
 
     const setConstructor = () => {
         return (value) => {
@@ -77,8 +77,8 @@ const Bg = (props) => {
             </div>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>背景文件</span>
-                <ChooseFile setShow={setBgName} id={'bgPicker'} dir={'background'} set={setConstructor()} />
-                <span className={styles.optionContent}>{bgName}</span>
+                <ChooseFile setShow={()=>{}} id={'bgPicker'} dir={'background'} set={setConstructor()} />
+                <span className={styles.optionContent}>{props.data.bg}</span>
             </div>
         </main>
 

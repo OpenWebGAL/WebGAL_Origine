@@ -41,7 +41,7 @@ const ChangeP = (props) => {
         sync();
     }
 
-    const [pName, setPName] = useState(props.data.newP);
+    // const [pName, setPName] = useState(props.data.newP);
 
     const setConstructor = () => {
         return (value) => {
@@ -89,8 +89,8 @@ const ChangeP = (props) => {
             </div>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>立绘文件</span>
-                <ChooseFile setShow={setPName} id={'pPicker'} dir={'figure'} set={setConstructor()}/>
-                <span className={styles.optionContent}>{pName}</span>
+                <ChooseFile setShow={()=>{}} id={'pPicker'} dir={'figure'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{props.data.newP}</span>
             </div>
         </main>
 

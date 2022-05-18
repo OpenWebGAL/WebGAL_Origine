@@ -43,11 +43,14 @@ const SceneEditor = (props) => {
     //开始生成元素
     let showSentenceList = [];
     const showSentenceGenerateArray = JSON.parse(JSON.stringify(runtime.currentSceneSentenceList));
+    console.log('重新渲染')
+    console.log(showSentenceGenerateArray);
     for (let i = 0; i < showSentenceGenerateArray.length; i++) {
         const sentence = showSentenceGenerateArray[i];
         const temp = sentenceMap(sentence, i);
         //每一个语句的卡片
-        const t = <div key={'sentence' + i + runtime.currentEditScene} className={styles.sentence}>
+        const t = <div id={'sentence' + i + runtime.currentEditScene} key={'sentence' + i + runtime.currentEditScene}
+                       className={styles.sentence}>
             <div className={styles.lineNumber}>{i + 1}</div>
             <div className={styles.sentenceMain}>{temp}</div>
         </div>
@@ -102,7 +105,7 @@ const SceneEditor = (props) => {
     </div>
 
 
-    return <div className={styles.main}>
+    return <div className={styles.main} key={runtime.currentEditScene} id={runtime.currentEditScene}>
         <div className={styles.topButtonList}>
             {/*<div className={styles.topButton} onClick={writeSence}>保存场景</div>*/}
             <div className={styles.topButton} onClick={() => {

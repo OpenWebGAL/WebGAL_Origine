@@ -39,7 +39,7 @@ const Dialog = (props) => {
         sync();
     }
 
-    const [vocalName, setVocalName] = useState(props.data.vocal);
+    // const [vocalName, setVocalName] = useState(props.data.vocal);
 
     const setConstructor = () => {
         return (value) => {
@@ -78,8 +78,8 @@ const Dialog = (props) => {
                 （将不会显示角色名）
                 </span>
                 <div className={styles.optionTitle}>配音文件</div>
-                <ChooseFile setShow={setVocalName} id={'vocalPicker'} dir={'vocal'} set={setConstructor()}/>
-                <span className={styles.optionContent}>{vocalName}</span>
+                <ChooseFile setShow={()=>{}} id={'vocalPicker'} dir={'vocal'} set={setConstructor()}/>
+                <span className={styles.optionContent}>{props.data.vocal}</span>
             </div>
         </main>
 

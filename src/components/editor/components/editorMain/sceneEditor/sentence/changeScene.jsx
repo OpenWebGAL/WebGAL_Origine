@@ -22,7 +22,7 @@ const ChangeScene = (props) => {
     useEffect(() => {
     })
 
-    const [sceneName, setSceneName] = useState(props.data.newScene);
+    // const [sceneName, setSceneName] = useState(props.data.newScene);
 
     const setConstructor = () => {
         return (value) => {
@@ -45,8 +45,8 @@ const ChangeScene = (props) => {
         <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>新场景</span>
-                <ChooseFile setShow={setSceneName} id={'scenePicker'} dir={'scene'} set={setConstructor()} />
-                <span className={styles.optionContent}>{sceneName}</span>
+                <ChooseFile setShow={()=>{}} id={'scenePicker'} dir={'scene'} set={setConstructor()} />
+                <span className={styles.optionContent}>{props.data.newScene}</span>
             </div>
         </main>
     </div>

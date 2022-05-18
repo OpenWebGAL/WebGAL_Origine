@@ -22,7 +22,7 @@ const PlayVideo = (props) => {
     useEffect(() => {
     })
 
-    const [videoName, setVideoName] = useState(props.data.video);
+    // const [videoName, setVideoName] = useState(props.data.video);
 
     const setConstructor = () => {
         return (value) => {
@@ -45,8 +45,8 @@ const PlayVideo = (props) => {
         <main className={styles.mainEdit}>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>视频文件</span>
-                <ChooseFile setShow={setVideoName} id={'videoPicker'} dir={'video'} set={setConstructor()} />
-                <span className={styles.optionContent}>{videoName}</span>
+                <ChooseFile setShow={()=>{}} id={'videoPicker'} dir={'video'} set={setConstructor()} />
+                <span className={styles.optionContent}>{props.data.video}</span>
             </div>
         </main>
     </div>

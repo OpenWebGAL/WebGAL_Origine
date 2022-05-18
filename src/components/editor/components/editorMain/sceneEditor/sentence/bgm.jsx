@@ -29,7 +29,7 @@ const Bgm = (props) => {
     }
 
 
-    const [bgmName, setBgmName] = useState(props.data.bgm);
+    // const [bgmName, setBgmName] = useState(props.data.bgm);
 
     const setConstructor = () => {
         return (value) => {
@@ -59,8 +59,8 @@ const Bgm = (props) => {
             </div>
             <div className={styles.singleOption}>
                 <span className={styles.optionTitle}>背景音乐文件</span>
-                <ChooseFile setShow={setBgmName} id={'bgmPicker'} dir={'bgm'} set={setConstructor()} />
-                <span className={styles.optionContent}>{bgmName}</span>
+                <ChooseFile setShow={()=>{}} id={'bgmPicker'} dir={'bgm'} set={setConstructor()} />
+                <span className={styles.optionContent}>{props.data.bgm}</span>
             </div>
         </main>
     </div>
