@@ -12,6 +12,10 @@ function App() {
         store.connect('isManagement', () => {
             setIsManagement(store.get('isManagement'))
         }, 'setIsManagementFunc');
+        // 打印初始log信息
+        console.log('WebGAL Origine 1.1.2');
+        console.log('Github: https://github.com/MakinoharaShoko/WebGAL ');
+        console.log('Made with ❤ by MakinoharaShoko');
     }, []);
     return (
         <div className="App">

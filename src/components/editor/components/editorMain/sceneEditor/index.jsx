@@ -47,7 +47,7 @@ const SceneEditor = (props) => {
         const sentence = showSentenceGenerateArray[i];
         const temp = sentenceMap(sentence, i);
         //每一个语句的卡片
-        const t = <div key={'sentence' + i} className={styles.sentence}>
+        const t = <div key={'sentence' + i + runtime.currentEditScene} className={styles.sentence}>
             <div className={styles.lineNumber}>{i + 1}</div>
             <div className={styles.sentenceMain}>{temp}</div>
         </div>
