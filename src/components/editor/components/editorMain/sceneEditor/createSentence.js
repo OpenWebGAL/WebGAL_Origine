@@ -67,6 +67,13 @@ const createSentence = (sentenceType) => {
                 content: []
             }
             break;
+        case'setAnimation':
+            sentence = {
+                type:sentenceType,
+                target:'',
+                animationName:'',
+                duration:1,
+            }
     }
 
     return sentence;
