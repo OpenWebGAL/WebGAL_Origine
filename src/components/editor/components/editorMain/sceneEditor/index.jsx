@@ -104,7 +104,8 @@ const SceneEditor = (props) => {
                      style={{padding: '0 5px 0 0'}}/>黑屏文字
         </div>
         <div className={styles.addSentenceButton} onClick={() => {
-            createNewSentence('setAnimation', props.index)
+            createNewSentence('setAnimation', props.index);
+            setShowAdd(false);
         }}><Play className={styles.addItemIcon} theme="outline" size='18' fill="#333"
                      style={{padding: '0 5px 0 0'}}/>设置动画
         </div>
