@@ -1,4 +1,4 @@
-import runtime from "../components/editor/controller/runtime";
+import runtime from "../env/runtime";
 
 export const sendWsSync = (id) => {
     const ws = runtime.wsConn;
